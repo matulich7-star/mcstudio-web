@@ -7,13 +7,13 @@ media_folder: "assets/img"
 public_folder: "/assets/img"
 
 collections:
-  - name: "blog"
-    label: "Blog / Proyectos"
-    folder: "content/blog"
+  - name: "proyectos"
+    label: "Proyectos / Portafolio"
+    folder: "content/proyectos"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Fecha", name: "date", widget: "datetime" }
-      - { label: "Imagen Destacada", name: "thumbnail", widget: "image", required: false }
-      - { label: "Cuerpo de texto", name: "body", widget: "markdown" }
+      - { label: "Imagen Principal", name: "thumbnail", widget: "image", required: false }
+      - { label: "Descripción / Detalles", name: "body", widget: "markdown" }
