@@ -247,6 +247,28 @@
 </section>
 
 <!-- ============ TRABAJO / PORTFOLIO ============ -->
+<section id="trabajo" class="py-24 lg:py-28 bg-blueprintdeep text-white blueprint-grid-dark relative">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+    <div class="max-w-2xl mb-16 fade-up">
+      <span class="font-mono-tag text-xs uppercase text-orange">Proyectos seleccionados</span>
+      <h2 class="font-display text-4xl sm:text-5xl font-bold uppercase mt-3">Trabajo reciente</h2>
+      <p class="text-white/70 mt-4 text-lg leading-relaxed">Una muestra del rango entre gráfica de marca y diseño espacial. El portafolio completo está en Behance.</p>
+    </div>
+
+    <!-- Contenedor dinámico de proyectos -->
+    <div id="lista-proyectos" class="grid md:grid-cols-3 gap-6">
+      <p class="text-white/50 col-span-3 text-sm font-mono-tag">Cargando proyectos...</p>
+    </div>
+
+    <div class="fade-up mt-10">
+      <a href="https://www.behance.net/gallery/248509301/Stand-Comercial-Ubiquiti-Sistek-Smart-City-Expo" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold text-white border border-white/30 hover:border-orange hover:text-orange px-5 py-3 rounded-sm transition-colors">
+        Ver portafolio completo en Behance
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10L10 4M10 4H5M10 4v5"/></svg>
+      </a>
+    </div>
+  </div>
+  </section>
+
 <script>
   // Cargar proyectos dinámicos desde GitHub
   fetch('https://api.github.com/repos/matulich7-star/mcstudio-web/contents/content/proyectos')
@@ -264,7 +286,7 @@
           const res = await fetch(file.download_url);
           const text = await res.text();
           
-          // Extraer variables del frontmatter
+          // Extraer variables
           const titleMatch = text.match(/title:\s*"?([^"\n]+)"?/);
           const thumbMatch = text.match(/thumbnail:\s*"?([^"\n]+)"?/);
           
@@ -288,124 +310,6 @@
       console.error(err);
       document.getElementById('lista-proyectos').innerHTML = '<p class="text-white/50 col-span-3">Error al cargar proyectos.</p>';
     });
-</script>
-    </div>
-
-    <div class="fade-up mt-10">
-      <a href="https://www.behance.net/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold text-white border border-white/30 hover:border-orange hover:text-orange px-5 py-3 rounded-sm transition-colors">
-        Ver portafolio completo en Behance
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10L10 4M10 4H5M10 4v5"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SOBRE MÍ ============ -->
-<section id="sobre-mi" class="py-24 lg:py-28">
-  <div class="max-w-5xl mx-auto px-6 lg:px-8">
-    <div class="grid lg:grid-cols-5 gap-12">
-      <div class="lg:col-span-2 fade-up">
-        <span class="font-mono-tag text-xs uppercase text-blueprint">Sobre mí</span>
-        <h2 class="font-display text-4xl font-bold uppercase text-ink mt-3">Matías Cortés</h2>
-        <p class="text-slate mt-4 leading-relaxed">Diseñador con base en Santiago, formado en diseño gráfico (AIEP), con un Diplomado en Branding en la Universidad Mayor y estudios de Ambientes en IPP.</p>
-      </div>
-      <div class="lg:col-span-3 fade-up">
-        <p class="text-ink/85 leading-relaxed mb-5">Mi trabajo cruza el diseño gráfico y el diseño espacial: llevo más de una década pasando del afiche y el manual de marca al plano de un fixture o un stand, entendiendo que en retail una campaña recién existe cuando se monta bien en la tienda.</p>
-        <p class="text-ink/85 leading-relaxed mb-8">He trabajado tanto dentro de equipos de marca como en formato freelance, cubriendo diseño gráfico, coordinación de visual merchandising y ejecución en terreno a lo largo de la red de tiendas.</p>
-
-        <p class="font-mono-tag text-xs uppercase text-slate mb-3">Herramientas</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs font-medium border border-line rounded-full px-3 py-1.5">Illustrator</span>
-          <span class="text-xs font-medium border border-line rounded-full px-3 py-1.5">Photoshop</span>
-          <span class="text-xs font-medium border border-line rounded-full px-3 py-1.5">AutoCAD 2D/3D</span>
-          <span class="text-xs font-medium border border-line rounded-full px-3 py-1.5">SketchUp</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CTA FINAL / CONTACTO ============ -->
-<section id="contacto" class="py-24 lg:py-28">
-  <div class="max-w-5xl mx-auto px-6 lg:px-8">
-    <div class="sheet bg-white border border-line rounded-sm px-8 sm:px-14 py-16 text-center relative overflow-hidden fade-up">
-      <div class="absolute inset-0 blueprint-grid opacity-60"></div>
-      <div class="relative">
-        <span class="font-mono-tag text-xs uppercase text-blueprint">Hoja final — contacto</span>
-        <h2 class="font-display text-4xl sm:text-5xl font-bold uppercase text-ink mt-4">¿Conversamos de tu próximo proyecto?</h2>
-        <p class="text-slate mt-4 max-w-xl mx-auto">Ya sea una implementación de visual merchandising, una identidad de marca o un mueble comercial — cuéntame qué necesitas.</p>
-        <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="mailto:hola@mcstudio.cl" class="text-center font-semibold bg-blueprint hover:bg-blueprintdeep text-white px-7 py-3.5 rounded-sm transition-colors">hola@mcstudio.cl</a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="text-center font-semibold text-ink border border-line hover:border-blueprint hover:text-blueprint px-7 py-3.5 rounded-sm transition-colors">Ver LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer class="border-t border-line pt-12 pb-8 bg-white">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <div class="flex items-center gap-2.5">
-      <span class="w-7 h-7 border-2 border-blueprint rounded-sm flex items-center justify-center font-display font-bold text-blueprint text-xs">MC</span>
-      <span class="font-display font-semibold text-sm">mcstudio.cl</span>
-    </div>
-    <div class="flex gap-6 text-sm text-ink/70">
-      <a href="https://www.behance.net/" target="_blank" rel="noopener" class="hover:text-blueprint transition-colors">Behance</a>
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="hover:text-blueprint transition-colors">LinkedIn</a>
-      <a href="mailto:hola@mcstudio.cl" class="hover:text-blueprint transition-colors">hola@mcstudio.cl</a>
-    </div>
-    <p class="text-xs text-slate">© 2026 Matías Cortés — Santiago, Chile</p>
-  </div>
-</footer>
-
-<script>
-  // Mobile menu
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  menuBtn.addEventListener('click', () => {
-    const isHidden = mobileMenu.classList.contains('hidden');
-    mobileMenu.classList.toggle('hidden');
-    menuBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
-  });
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-
-  // Scroll reveal
-  const revealEls = document.querySelectorAll('.fade-up');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => io.observe(el));
-
-  // 2D / 3D toggle
-  const toggleThumb = document.getElementById('toggleThumb');
-  const view2d = document.getElementById('view2d');
-  const view3d = document.getElementById('view3d');
-  const viewBtns = document.querySelectorAll('.view-btn');
-
-  viewBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const is3d = btn.dataset.view === '3d';
-      toggleThumb.style.transform = is3d ? 'translateX(100%)' : 'translateX(0)';
-      viewBtns.forEach(b => {
-        b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
-        b.classList.toggle('text-white', b === btn);
-        b.classList.toggle('text-ink', b !== btn);
-      });
-      if (is3d) {
-        view2d.style.opacity = '0'; view2d.classList.add('pointer-events-none');
-        view3d.style.opacity = '1'; view3d.classList.remove('pointer-events-none');
-      } else {
-        view3d.style.opacity = '0'; view3d.classList.add('pointer-events-none');
-        view2d.style.opacity = '1'; view2d.classList.remove('pointer-events-none');
-      }
-    });
-  });
 </script>
 
 </body>
