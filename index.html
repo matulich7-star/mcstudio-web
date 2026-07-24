@@ -245,8 +245,7 @@
     </div>
   </div>
 </section>
-
-<!-- ============ TRABAJO / PORTFOLIO ============ -->
+  <!-- ============ TRABAJO / PORTFOLIO ============ -->
 <section id="trabajo" class="py-24 lg:py-28 bg-blueprintdeep text-white blueprint-grid-dark relative">
   <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
     <div class="max-w-2xl mb-16 fade-up">
@@ -255,62 +254,47 @@
       <p class="text-white/70 mt-4 text-lg leading-relaxed">Una muestra del rango entre gráfica de marca y diseño espacial. El portafolio completo está en Behance.</p>
     </div>
 
-    <!-- Contenedor dinámico de proyectos -->
+    <!-- Grilla de proyectos -->
     <div id="lista-proyectos" class="grid md:grid-cols-3 gap-6">
-      <p class="text-white/50 col-span-3 text-sm font-mono-tag">Cargando proyectos...</p>
+      
+      <!-- Proyecto 1: Sistek -->
+      <div class="fade-up border border-white/15 rounded-sm p-6 bg-white/5 flex flex-col justify-between">
+        <div>
+          <span class="font-mono-tag text-[11px] text-orange">B-01 · IDENTIDAD DE MARCA</span>
+          <h3 class="font-display text-xl font-bold uppercase mt-3 mb-2">Sistek – Guardián de operaciones críticas</h3>
+          <p class="text-white/70 text-sm leading-relaxed mb-6">Rediseño de identidad visual para empresa de tecnología y telecomunicaciones.</p>
+        </div>
+        <a href="https://www.behance.net/gallery/248509301/Stand-Comercial-Ubiquiti-Sistek-Smart-City-Expo" target="_blank" rel="noopener" class="text-xs font-mono-tag text-orange hover:underline inline-flex items-center gap-1">VER EN BEHANCE →</a>
+      </div>
+
+      <!-- Proyecto 2: Under Armour -->
+      <div class="fade-up border border-white/15 rounded-sm p-6 bg-white/5 flex flex-col justify-between">
+        <div>
+          <span class="font-mono-tag text-[11px] text-orange">B-02 · DISEÑO ESPACIAL & POS</span>
+          <h3 class="font-display text-xl font-bold uppercase mt-3 mb-2">Under Armour – Implementación Retail</h3>
+          <p class="text-white/70 text-sm leading-relaxed mb-6">Planimetría y supervisión de material POP para tiendas en Chile.</p>
+        </div>
+        <a href="https://www.behance.net/" target="_blank" rel="noopener" class="text-xs font-mono-tag text-orange hover:underline inline-flex items-center gap-1">VER EN BEHANCE →</a>
+      </div>
+
+      <!-- Proyecto 3: Castaño -->
+      <div class="fade-up border border-white/15 rounded-sm p-6 bg-white/5 flex flex-col justify-between">
+        <div>
+          <span class="font-mono-tag text-[11px] text-orange">B-03 · VISUAL MERCHANDISING</span>
+          <h3 class="font-display text-xl font-bold uppercase mt-3 mb-2">Castaño – Campañas de Punto de Venta</h3>
+          <p class="text-white/70 text-sm leading-relaxed mb-6">Diseño y adaptación gráfica para vitrinas y señalética en sucursales.</p>
+        </div>
+        <a href="https://www.behance.net/" target="_blank" rel="noopener" class="text-xs font-mono-tag text-orange hover:underline inline-flex items-center gap-1">VER EN BEHANCE →</a>
+      </div>
+
     </div>
 
-    <div class="fade-up mt-10">
-      <a href="https://www.behance.net/gallery/248509301/Stand-Comercial-Ubiquiti-Sistek-Smart-City-Expo" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold text-white border border-white/30 hover:border-orange hover:text-orange px-5 py-3 rounded-sm transition-colors">
+    <div class="fade-up mt-12">
+      <a href="https://www.behance.net/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold text-white border border-white/30 hover:border-orange hover:text-orange px-5 py-3 rounded-sm transition-colors">
         Ver portafolio completo en Behance
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10L10 4M10 4H5M10 4v5"/></svg>
       </a>
     </div>
   </div>
-  </section>
+</section>
 
-<script>
-  // Cargar proyectos dinámicos desde GitHub
-  fetch('https://api.github.com/repos/matulich7-star/mcstudio-web/contents/content/proyectos')
-    .then(response => response.json())
-    .then(async files => {
-      const container = document.getElementById('lista-proyectos');
-      if (!Array.isArray(files) || files.length === 0) {
-        container.innerHTML = '<p class="text-white/50 col-span-3">No hay proyectos publicados aún.</p>';
-        return;
-      }
-      container.innerHTML = '';
-      
-      for (const file of files) {
-        if (file.name.endsWith('.md')) {
-          const res = await fetch(file.download_url);
-          const text = await res.text();
-          
-          // Extraer variables
-          const titleMatch = text.match(/title:\s*"?([^"\n]+)"?/);
-          const thumbMatch = text.match(/thumbnail:\s*"?([^"\n]+)"?/);
-          
-          const title = titleMatch ? titleMatch[1] : 'Proyecto';
-          const thumb = thumbMatch ? thumbMatch[1] : '';
-
-          const card = document.createElement('div');
-          card.className = 'fade-up border border-white/15 rounded-sm p-6 bg-white/5 flex flex-col justify-between';
-          card.innerHTML = `
-            <div>
-              ${thumb ? `<img src="${thumb}" alt="${title}" class="w-full h-48 object-cover mb-4 rounded-sm border border-white/10">` : ''}
-              <span class="font-mono-tag text-[11px] text-orange">PROYECTO DESTACADO</span>
-              <h3 class="font-display text-xl font-bold uppercase mt-2 mb-2">${title}</h3>
-            </div>
-          `;
-          container.appendChild(card);
-        }
-      }
-    })
-    .catch(err => {
-      console.error(err);
-      document.getElementById('lista-proyectos').innerHTML = '<p class="text-white/50 col-span-3">Error al cargar proyectos.</p>';
-    });
-</script>
-
-</body>
-</html>
