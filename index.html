@@ -188,41 +188,48 @@
     </div>
   </section>
 
-  <!-- ============ FOOTER / CONTACTO ============ -->
-  <footer id="contacto" class="py-20 border-t border-neutral-800 px-6 max-w-7xl mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-      <div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold uppercase">¿Listo para impulsar tu marca?</h2>
-        <p class="text-neutral-400 text-sm mt-2">Hablemos sobre tu próximo proyecto comercial o estratégico.</p>
+ <!-- ============ SERVICIOS ============ -->
+  <section id="servicios" class="py-24 border-t border-neutral-800 bg-neutral-900/40 w-full">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Especialidades</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold uppercase mt-2 mb-12">Servicios del Estudio</h2>
+
+      <!-- Grilla de 3 columnas bien espaciadas -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 border border-neutral-800 bg-[#121212] rounded-lg">
+          <h3 class="text-xl font-bold uppercase mb-4 text-[#FFB800]">01. Identidad Visual</h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">Logotipos, sistemas de marca, manuales corporativos y material impreso/digital de alto estándar.</p>
+        </div>
+
+        <div class="p-8 border border-neutral-800 bg-[#121212] rounded-lg">
+          <h3 class="text-xl font-bold uppercase mb-4 text-[#FFB800]">02. Visual Merchandising</h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">Diseño de vitrinas, planimetría para tiendas, arquitectura gráfica comercial y material POS/POP.</p>
+        </div>
+
+        <div class="p-8 border border-neutral-800 bg-[#121212] rounded-lg">
+          <h3 class="text-xl font-bold uppercase mb-4 text-[#FFB800]">03. Estrategia & Social Media</h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">Carruseles didácticos, diseño web minimalista y contenido gráfico para la aceleración de marcas.</p>
+        </div>
       </div>
-      <a href="mailto:contacto@mcstudio.cl" class="bg-[#E84E1B] hover:bg-[#FFB800] text-white font-bold text-sm uppercase px-8 py-4 rounded transition-colors duration-300">
-        Enviar Mensaje
-      </a>
     </div>
-    <div class="mt-16 pt-8 border-t border-neutral-800 text-xs text-neutral-500 flex flex-col sm:flex-row justify-between gap-4">
-      <p>© MC Estudio de Diseño. Todos los derechos reservados.</p>
-      <p>Santiago, Chile</p>
+  </section>
+
+  <!-- ============ FOOTER / CONTACTO (DEBAJO DE SERVICIOS) ============ -->
+  <footer id="contacto" class="py-20 border-t border-neutral-800 w-full bg-[#121212]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold uppercase">¿Listo para impulsar tu marca?</h2>
+          <p class="text-neutral-400 text-sm mt-2">Hablemos sobre tu próximo proyecto comercial o estratégico.</p>
+        </div>
+        <a href="mailto:contacto@mcstudio.cl" class="bg-[#E84E1B] hover:bg-[#FFB800] text-white font-bold text-sm uppercase px-8 py-4 rounded transition-colors duration-300">
+          Enviar Mensaje
+        </a>
+      </div>
+      
+      <div class="mt-16 pt-8 border-t border-neutral-800 text-xs text-neutral-500 flex flex-col sm:flex-row justify-between gap-4">
+        <p>© MC Estudio de Diseño. Todos los derechos reservados.</p>
+        <p>Santiago, Chile</p>
+      </div>
     </div>
   </footer>
-
-  <!-- Swiper JS Script -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.hero-swiper', {
-      loop: true,
-      autoplay: {
-        delay: 4500,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  </script>
-</body>
-</html>
