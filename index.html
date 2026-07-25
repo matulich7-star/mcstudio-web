@@ -25,12 +25,23 @@
 </head>
 <body class="bg-[#121212] text-neutral-100 antialiased selection:bg-[#E84E1B] selection:text-white">
 
-  <!-- ============ 1. NAVEGACIÓN SIMPLE ============ -->
+<!-- ============ 1. NAVEGACIÓN SIMPLE ============ -->
   <header class="fixed top-0 w-full z-50 bg-[#121212]/90 backdrop-blur-md border-b border-neutral-800">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#" class="font-extrabold tracking-wider text-sm text-white uppercase">
-        MC Estudio
+      
+      <!-- LOGO DE LA WEB -->
+      <a href="#" class="flex items-center">
+        <img 
+          src="assets/logo-mc.png" 
+          alt="MC Estudio de Diseño" 
+          class="h-12 w-auto object-contain py-1"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        >
+        <span class="hidden font-extrabold tracking-wider text-sm uppercase text-white">
+          MC Estudio
+        </span>
       </a>
+
       <a href="#contacto" class="bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-4 py-2 rounded transition-colors duration-300">
         Contacto
       </a>
