@@ -23,83 +23,72 @@
     }
   </style>
 </head>
-<body class="bg-[#121212] text-neutral-100 antialiased selection:bg-[#E84E1B] selection:text-white flex flex-col min-h-screen">
+<body class="bg-[#121212] text-neutral-100 antialiased selection:bg-[#E84E1B] selection:text-white">
 
-  <!-- ============ NAVEGACIÓN ============ -->
+  <!-- ============ 1. NAVEGACIÓN SIMPLE ============ -->
   <header class="fixed top-0 w-full z-50 bg-[#121212]/90 backdrop-blur-md border-b border-neutral-800">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      
-      <!-- LOGO MC ESTUDIO -->
-      <a href="#" class="flex items-center gap-3">
-        <img src="assets/logo-mc.png" alt="MC Estudio de Diseño" class="h-10 w-auto" onerror="this.onerror=null; this.src=''; this.alt='MC ESTUDIO DE DISEÑO'; this.className='font-bold tracking-wider uppercase text-white';">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-extrabold tracking-wider text-sm text-white uppercase">
+        MC Estudio
       </a>
-
-      <!-- Menú -->
-      <nav class="hidden md:flex gap-8 text-sm font-medium text-neutral-400">
-        <a href="#proyectos" class="hover:text-[#FFB800] transition-colors">Proyectos</a>
-        <a href="#servicios" class="hover:text-[#FFB800] transition-colors">Servicios</a>
-        <a href="#contacto" class="hover:text-[#FFB800] transition-colors">Contacto</a>
-      </nav>
-
-      <!-- Botón CTA -->
-      <a href="#contacto" class="bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-5 py-2.5 rounded transition-colors duration-300">
-        Hablemos
+      <a href="#contacto" class="bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-4 py-2 rounded transition-colors duration-300">
+        Contacto
       </a>
     </div>
   </header>
 
-  <!-- ============ HERO CON CARRUSEL DE BANNERS ============ -->
-  <section class="pt-20 bg-[#121212] w-full">
-    <div class="swiper hero-swiper w-full h-[75vh] min-h-[500px]">
+  <!-- ============ 2. HERO CARRUSEL ============ -->
+  <section class="pt-16">
+    <div class="swiper hero-swiper w-full h-[65vh] min-h-[420px]">
       <div class="swiper-wrapper">
         
-        <!-- Slide 1: Visual Merchandising -->
+        <!-- Slide 1 -->
         <div class="swiper-slide relative flex items-center justify-center bg-neutral-900">
-          <img src="assets/stand-sistek.jpg" alt="Visual Merchandising & POS" class="absolute inset-0 w-full h-full object-cover opacity-35">
-          <div class="relative z-10 max-w-4xl text-center px-6">
-            <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest bg-black/60 px-3 py-1 rounded border border-[#FFB800]/30">Visual Merchandising & POS</span>
-            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight mt-4 mb-4 text-white">
-              Diseño Espacial & Punto de Venta
+          <img src="assets/stand-sistek.jpg" alt="Visual Merchandising" class="absolute inset-0 w-full h-full object-cover opacity-30">
+          <div class="relative z-10 max-w-3xl text-center px-6">
+            <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Visual Merchandising & POS</span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold uppercase mt-3 mb-4 text-white">
+              Diseño Espacial & Retail
             </h1>
-            <p class="text-neutral-300 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
-              Planimetría, exhibidores, vitrinismo y arquitectura comercial proyectada para impactar en retail.
+            <p class="text-neutral-300 text-sm max-w-lg mx-auto mb-6">
+              Planimetrías, exhibidores, vitrinismo y material POP para proyectar tu marca en el punto de venta.
             </p>
-            <a href="#proyectos" class="inline-block bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-6 py-3 rounded transition-colors duration-300">
-              Ver Proyectos
+            <a href="#proyectos" class="inline-block bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-6 py-3 rounded transition-colors">
+              Ver Trabajos
             </a>
           </div>
         </div>
 
-        <!-- Slide 2: Brand Identity -->
+        <!-- Slide 2 -->
         <div class="swiper-slide relative flex items-center justify-center bg-neutral-900">
-          <img src="assets/branding-mc.jpg" alt="Identidad Visual" class="absolute inset-0 w-full h-full object-cover opacity-35">
-          <div class="relative z-10 max-w-4xl text-center px-6">
-            <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest bg-black/60 px-3 py-1 rounded border border-[#FFB800]/30">Brand Identity</span>
-            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight mt-4 mb-4 text-white">
-              Sistemas de Identidad Visual
+          <img src="assets/branding-mc.jpg" alt="Branding" class="absolute inset-0 w-full h-full object-cover opacity-30">
+          <div class="relative z-10 max-w-3xl text-center px-6">
+            <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Brand Identity</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold uppercase mt-3 mb-4 text-white">
+              Branding & Logotipos
             </h2>
-            <p class="text-neutral-300 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+            <p class="text-neutral-300 text-sm max-w-lg mx-auto mb-6">
               Creación de marcas con propósito, manuales corporativos y lenguaje gráfico para empresas.
             </p>
-            <a href="#proyectos" class="inline-block bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-6 py-3 rounded transition-colors duration-300">
+            <a href="#proyectos" class="inline-block bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-6 py-3 rounded transition-colors">
               Ver Branding
             </a>
           </div>
         </div>
 
-        <!-- Slide 3: Estrategia Digital -->
+        <!-- Slide 3 -->
         <div class="swiper-slide relative flex items-center justify-center bg-neutral-900">
-          <img src="assets/digital-pymes.jpg" alt="Estrategia Digital" class="absolute inset-0 w-full h-full object-cover opacity-35">
-          <div class="relative z-10 max-w-4xl text-center px-6">
-            <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest bg-black/60 px-3 py-1 rounded border border-[#FFB800]/30">Digital Strategy</span>
-            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight mt-4 mb-4 text-white">
-              Diseño & Posicionamiento Digital
+          <img src="assets/digital-pymes.jpg" alt="Estrategia Digital" class="absolute inset-0 w-full h-full object-cover opacity-30">
+          <div class="relative z-10 max-w-3xl text-center px-6">
+            <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Digital Strategy</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold uppercase mt-3 mb-4 text-white">
+              Estrategia & Redes
             </h2>
-            <p class="text-neutral-300 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
-              Contenido estratégico en redes sociales y diseño web enfocado en la conversión de clientes.
+            <p class="text-neutral-300 text-sm max-w-lg mx-auto mb-6">
+              Diseño de carruseles, maquetación web y comunicación estratégica para PYMES.
             </p>
-            <a href="#contacto" class="inline-block bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-6 py-3 rounded transition-colors duration-300">
-              Cotizar Proyecto
+            <a href="#contacto" class="inline-block bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-6 py-3 rounded transition-colors">
+              Cotizar
             </a>
           </div>
         </div>
@@ -107,110 +96,112 @@
       </div>
 
       <div class="swiper-pagination"></div>
-      <div class="swiper-button-next !text-[#FFB800] hidden sm:block"></div>
-      <div class="swiper-button-prev !text-[#FFB800] hidden sm:block"></div>
     </div>
   </section>
 
-  <!-- ============ PROYECTOS SELECCIONADOS ============ -->
-  <section id="proyectos" class="py-24 border-t border-neutral-800 w-full bg-[#121212]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
-        <div>
-          <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Portafolio</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold uppercase mt-2">Trabajo Reciente</h2>
-        </div>
-        <p class="text-neutral-400 text-sm max-w-md mt-4 md:mt-0">Proyectos integrales entre gráfica de marca, retail y comunicación digital.</p>
+  <!-- ============ 3. PROYECTOS DESTACADOS ============ -->
+  <section id="proyectos" class="py-20 border-t border-neutral-800">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="mb-12 text-center md:text-left">
+        <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Portafolio</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold uppercase mt-1">Trabajos Recientes</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- Card 1: Sistek -->
-        <article class="group bg-neutral-900/60 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors duration-300">
+        <!-- Tarjeta 1 -->
+        <div class="bg-neutral-900 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors">
           <div>
-            <span class="text-[10px] font-mono uppercase text-[#FFB800]">Branding & Identidad</span>
-            <h3 class="text-xl font-bold uppercase mt-2 mb-3 group-hover:text-[#FFB800] transition-colors">Sistek</h3>
-            <p class="text-neutral-400 text-sm leading-relaxed mb-6">Rediseño de identidad corporativa y aplicaciones visuales para marca de telecomunicaciones.</p>
+            <span class="text-[10px] font-mono uppercase text-[#FFB800]">Branding & Stand</span>
+            <h3 class="text-lg font-bold uppercase mt-2 mb-2">Sistek</h3>
+            <p class="text-neutral-400 text-xs leading-relaxed mb-6">Rediseño de identidad y gráfica para stand en Smart City Expo.</p>
           </div>
-          <a href="https://www.behance.net/gallery/248509301/Stand-Comercial-Ubiquiti-Sistek-Smart-City-Expo" target="_blank" rel="noopener" class="text-xs font-mono uppercase text-[#E84E1B] group-hover:text-[#FFB800] inline-flex items-center gap-1 transition-colors">
+          <a href="https://www.behance.net/gallery/248509301/Stand-Comercial-Ubiquiti-Sistek-Smart-City-Expo" target="_blank" class="text-xs font-mono uppercase text-[#E84E1B] hover:text-[#FFB800] transition-colors">
             Ver en Behance →
           </a>
-        </article>
+        </div>
 
-        <!-- Card 2: Under Armour -->
-        <article class="group bg-neutral-900/60 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors duration-300">
+        <!-- Tarjeta 2 -->
+        <div class="bg-neutral-900 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors">
           <div>
-            <span class="text-[10px] font-mono uppercase text-[#FFB800]">Visual Merchandising & POS</span>
-            <h3 class="text-xl font-bold uppercase mt-2 mb-3 group-hover:text-[#FFB800] transition-colors">Under Armour</h3>
-            <p class="text-neutral-400 text-sm leading-relaxed mb-6">Exhibición, vitrinas y supervisión gráfica de material POP para tiendas en retail.</p>
+            <span class="text-[10px] font-mono uppercase text-[#FFB800]">Visual Merchandising</span>
+            <h3 class="text-lg font-bold uppercase mt-2 mb-2">Under Armour</h3>
+            <p class="text-neutral-400 text-xs leading-relaxed mb-6">Exhibición en tienda, vitrinismo y material POP comercial.</p>
           </div>
-          <a href="https://www.behance.net/gallery/75206223/Exhibicion-vitrinas-y-visual-merchandising-Under-Armour" target="_blank" rel="noopener" class="text-xs font-mono uppercase text-[#E84E1B] group-hover:text-[#FFB800] inline-flex items-center gap-1 transition-colors">
+          <a href="https://www.behance.net/gallery/75206223/Exhibicion-vitrinas-y-visual-merchandising-Under-Armour" target="_blank" class="text-xs font-mono uppercase text-[#E84E1B] hover:text-[#FFB800] transition-colors">
             Ver en Behance →
           </a>
-        </article>
+        </div>
 
-        <!-- Card 3: Branding & Logotipos -->
-        <article class="group bg-neutral-900/60 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors duration-300">
+        <!-- Tarjeta 3 -->
+        <div class="bg-neutral-900 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors">
           <div>
             <span class="text-[10px] font-mono uppercase text-[#FFB800]">Branding & Logotipos</span>
-            <h3 class="text-xl font-bold uppercase mt-2 mb-3 group-hover:text-[#FFB800] transition-colors">Identidad de Marcas</h3>
-            <p class="text-neutral-400 text-sm leading-relaxed mb-6">Diseño de logotipos, manuales de marca y sistemas visuales corporativos para empresas y emprendimientos.</p>
+            <h3 class="text-lg font-bold uppercase mt-2 mb-2">Identidad Visual</h3>
+            <p class="text-neutral-400 text-xs leading-relaxed mb-6">Sistemas de marcas, logotipos y manuales corporativos para empresas.</p>
           </div>
-          <a href="https://www.behance.net/" target="_blank" rel="noopener" class="text-xs font-mono uppercase text-[#E84E1B] group-hover:text-[#FFB800] inline-flex items-center gap-1 transition-colors">
+          <a href="https://www.behance.net/" target="_blank" class="text-xs font-mono uppercase text-[#E84E1B] hover:text-[#FFB800] transition-colors">
             Ver en Behance →
           </a>
-        </article>
+        </div>
 
       </div>
+
     </div>
   </section>
 
-  <!-- ============ SERVICIOS ============ -->
-  <section id="servicios" class="py-24 border-t border-neutral-800 bg-neutral-900/40 w-full">
-    <div class="max-w-7xl mx-auto px-6">
-      <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Especialidades</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold uppercase mt-2 mb-12">Servicios del Estudio</h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="p-8 border border-neutral-800 bg-[#121212] rounded-lg">
-          <h3 class="text-xl font-bold uppercase mb-4 text-[#FFB800]">01. Identidad Visual</h3>
-          <p class="text-neutral-400 text-sm leading-relaxed">Logotipos, sistemas de marca, manuales corporativos y material impreso/digital de alto estándar.</p>
-        </div>
-
-        <div class="p-8 border border-neutral-800 bg-[#121212] rounded-lg">
-          <h3 class="text-xl font-bold uppercase mb-4 text-[#FFB800]">02. Visual Merchandising</h3>
-          <p class="text-neutral-400 text-sm leading-relaxed">Diseño de vitrinas, planimetría para tiendas, arquitectura gráfica comercial y material POS/POP.</p>
-        </div>
-
-        <div class="p-8 border border-neutral-800 bg-[#121212] rounded-lg">
-          <h3 class="text-xl font-bold uppercase mb-4 text-[#FFB800]">03. Estrategia & Social Media</h3>
-          <p class="text-neutral-400 text-sm leading-relaxed">Carruseles didácticos, diseño web minimalista y contenido gráfico para la aceleración de marcas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER / CONTACTO ============ -->
-  <footer id="contacto" class="py-20 border-t border-neutral-800 w-full bg-[#121212] mt-auto">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-        <div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold uppercase">¿Listo para impulsar tu marca?</h2>
-          <p class="text-neutral-400 text-sm mt-2">Hablemos sobre tu próximo proyecto comercial o estratégico.</p>
-        </div>
-        <a href="mailto:contacto@mcstudio.cl" class="bg-[#E84E1B] hover:bg-[#FFB800] text-white font-bold text-sm uppercase px-8 py-4 rounded transition-colors duration-300">
-          Enviar Mensaje
-        </a>
-      </div>
+  <!-- ============ 4. SERVICIOS RÁPIDOS ============ -->
+  <section class="py-20 border-t border-neutral-800 bg-neutral-950">
+    <div class="max-w-6xl mx-auto px-6">
       
-      <div class="mt-16 pt-8 border-t border-neutral-800 text-xs text-neutral-500 flex flex-col sm:flex-row justify-between gap-4">
-        <p>© MC Estudio de Diseño. Todos los derechos reservados.</p>
-        <p>Santiago, Chile</p>
+      <div class="mb-12 text-center md:text-left">
+        <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Soluciones</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold uppercase mt-1">¿Qué hacemos?</h2>
       </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 border border-neutral-800 bg-[#121212] rounded">
+          <div class="text-[#FFB800] text-xl font-extrabold mb-2">01</div>
+          <h3 class="font-bold uppercase text-white mb-2">Identidad & Branding</h3>
+          <p class="text-neutral-400 text-xs leading-relaxed">Logotipos, manuales de marca y piezas impresas o digitales con estándar corporativo.</p>
+        </div>
+
+        <div class="p-6 border border-neutral-800 bg-[#121212] rounded">
+          <div class="text-[#FFB800] text-xl font-extrabold mb-2">02</div>
+          <h3 class="font-bold uppercase text-white mb-2">Visual Merchandising</h3>
+          <p class="text-neutral-400 text-xs leading-relaxed">Vitrinas, planimetría comercial, arquitectura gráfica y supervisión de punto de venta.</p>
+        </div>
+
+        <div class="p-6 border border-neutral-800 bg-[#121212] rounded">
+          <div class="text-[#FFB800] text-xl font-extrabold mb-2">03</div>
+          <h3 class="font-bold uppercase text-white mb-2">Contenido & Redes</h3>
+          <p class="text-neutral-400 text-xs leading-relaxed">Carruseles informativos, diseño web minimalista y estrategia de comunicación.</p>
+        </div>
+      </div>
+
     </div>
+  </section>
+
+  <!-- ============ 5. LLAMADO A LA ACCIÓN (CONTACTO) ============ -->
+  <section id="contacto" class="py-20 border-t border-neutral-800 text-center px-6">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-extrabold uppercase mb-4">¿Tienes un proyecto en mente?</h2>
+      <p class="text-neutral-400 text-sm mb-8 leading-relaxed">
+        Hablemos sobre cómo podemos potenciar la imagen visual de tu marca o tu espacio comercial.
+      </p>
+      <a href="mailto:contacto@mcstudio.cl" class="inline-block bg-[#E84E1B] hover:bg-[#FFB800] text-white font-bold text-xs uppercase px-8 py-4 rounded transition-colors duration-300">
+        Enviar Mensaje
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="py-8 border-t border-neutral-800 text-center text-xs text-neutral-500">
+    <p>© MC Estudio de Diseño · Santiago, Chile</p>
   </footer>
 
-  <!-- Swiper JS Script -->
+  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     const swiper = new Swiper('.hero-swiper', {
@@ -223,11 +214,8 @@
         el: '.swiper-pagination',
         clickable: true,
       },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
     });
   </script>
+
 </body>
 </html>
