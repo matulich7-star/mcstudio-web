@@ -1,165 +1,231 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-  <!-- NAVEGACIÓN CON TU LOGO OFICIAL -->
-<header class="fixed top-0 w-full z-50 bg-[#121212]/90 backdrop-blur-md border-b border-neutral-800">
-  <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-    
-    <!-- Tu Logo Oficial (Positivo/Negativo según versión) -->
-    <a href="#" class="flex items-center gap-3">
-      <!-- Cambia 'assets/logo-mc.svg' por la ruta donde subas tu archivo de logo -->
-      <img src="assets/logo-mc.png" alt="MC Estudio de Diseño" class="h-10 w-auto">
-    </a>
-
-    <!-- Menú de navegación -->
-    <nav class="hidden md:flex gap-8 text-sm font-medium text-neutral-400">
-      <a href="#proyectos" class="hover:text-white transition">Proyectos</a>
-      <a href="#servicios" class="hover:text-white transition">Servicios</a>
-      <a href="#sobre-mi" class="hover:text-white transition">Sobre mí</a>
-    </nav>
-
-    <!-- Botón CTA con el color naranja/amarillo de tu marca -->
-    <a href="#contacto" class="bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-5 py-2.5 rounded transition-colors duration-300">
-      Hablemos
-    </a>
-
-  </div>
-</header>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matías Cortés | Graphic Design & Visual Merchandising</title>
-  <!-- CDN de Tailwind CSS para prototipado y diseño rápido -->
+  <title>MC Estudio de Diseño | Visual Merchandising & Branding</title>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Swiper.js CSS (Carrusel) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Tipografía Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
     body { font-family: 'Inter', sans-serif; }
+    /* Estilos personalizados para los puntos del carrusel */
+    .swiper-pagination-bullet-active {
+      background-color: #FFB800 !important;
+    }
   </style>
 </head>
-<body class="bg-neutral-950 text-neutral-100 antialiased selection:bg-orange-500 selection:text-white">
+<body class="bg-[#121212] text-neutral-100 antialiased selection:bg-[#E84E1B] selection:text-white">
 
-  <!-- NAVEGACIÓN -->
-  <header class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
-    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="font-bold text-xl tracking-wider uppercase">MC<span class="text-orange-500">.</span>STUDIO</a>
+  <!-- ============ NAVEGACIÓN ============ -->
+  <header class="fixed top-0 w-full z-50 bg-[#121212]/90 backdrop-blur-md border-b border-neutral-800">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- LOGO MC ESTUDIO -->
+      <a href="#" class="flex items-center gap-3">
+        <!-- Reemplaza 'assets/logo-mc.png' por la ruta final de tu imagen -->
+        <img src="assets/logo-mc.png" alt="MC Estudio de Diseño" class="h-10 w-auto" onerror="this.onerror=null; this.src=''; this.alt='MC ESTUDIO DE DISEÑO'; this.className='font-bold tracking-wider uppercase text-white';">
+      </a>
+
+      <!-- Menú -->
       <nav class="hidden md:flex gap-8 text-sm font-medium text-neutral-400">
-        <a href="#proyectos" class="hover:text-white transition">Proyectos</a>
-        <a href="#servicios" class="hover:text-white transition">Servicios</a>
-        <a href="#sobre-mi" class="hover:text-white transition">Sobre mí</a>
+        <a href="#proyectos" class="hover:text-[#FFB800] transition-colors">Proyectos</a>
+        <a href="#servicios" class="hover:text-[#FFB800] transition-colors">Servicios</a>
+        <a href="#sobre-mi" class="hover:text-[#FFB800] transition-colors">Sobre mí</a>
       </nav>
-      <a href="#contacto" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold text-xs uppercase px-5 py-2.5 rounded transition">Hablemos</a>
+
+      <!-- Botón CTA -->
+      <a href="#contacto" class="bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-5 py-2.5 rounded transition-colors duration-300">
+        Hablemos
+      </a>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="min-h-screen flex items-center pt-24 pb-12 px-6 max-w-6xl mx-auto">
-    <div class="max-w-3xl">
-      <span class="text-orange-500 text-xs font-mono uppercase tracking-widest">Graphic Designer & Visual Merchandiser</span>
-      <h1 class="text-4xl sm:text-6xl font-extrabold uppercase tracking-tight mt-4 mb-6 leading-tight">
-        Diseño estratégico para marcas, espacio comercial y entorno digital.
-      </h1>
-      <p class="text-neutral-400 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
-        Ayudo a marcas y empresas a conectar con su audiencia mediante identidad visual sólida, diseño de punto de venta y estrategia gráfica digital.
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="#proyectos" class="bg-white text-neutral-950 hover:bg-neutral-200 font-semibold text-sm px-6 py-3 rounded transition">Ver proyectos</a>
-        <a href="https://www.behance.net/" target="_blank" rel="noopener" class="border border-neutral-700 hover:border-neutral-500 text-sm font-semibold px-6 py-3 rounded transition">Behance ↗</a>
+  <!-- ============ HERO CON CARRUSEL DE BANNERS ============ -->
+  <section class="pt-20 bg-[#121212]">
+    <div class="swiper hero-swiper w-full h-[75vh] min-h-[500px]">
+      <div class="swiper-wrapper">
+        
+        <!-- Slide 1: Visual Merchandising -->
+        <div class="swiper-slide relative flex items-center justify-center bg-neutral-900">
+          <img src="assets/stand-sistek.jpg" alt="Visual Merchandising & POS" class="absolute inset-0 w-full h-full object-cover opacity-35">
+          <div class="relative z-10 max-w-4xl text-center px-6">
+            <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest bg-black/60 px-3 py-1 rounded border border-[#FFB800]/30">Visual Merchandising & POS</span>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight mt-4 mb-4 text-white">
+              Diseño Espacial & Punto de Venta
+            </h1>
+            <p class="text-neutral-300 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+              Planimetría, exhibidores, vitrinismo y arquitectura comercial proyectada para impactar en retail.
+            </p>
+            <a href="#proyectos" class="inline-block bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-6 py-3 rounded transition-colors duration-300">
+              Ver Proyectos
+            </a>
+          </div>
+        </div>
+
+        <!-- Slide 2: Brand Identity -->
+        <div class="swiper-slide relative flex items-center justify-center bg-neutral-900">
+          <img src="assets/branding-mc.jpg" alt="Identidad Visual" class="absolute inset-0 w-full h-full object-cover opacity-35">
+          <div class="relative z-10 max-w-4xl text-center px-6">
+            <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest bg-black/60 px-3 py-1 rounded border border-[#FFB800]/30">Brand Identity</span>
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight mt-4 mb-4 text-white">
+              Sistemas de Identidad Visual
+            </h2>
+            <p class="text-neutral-300 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+              Creación de marcas con propósito, manuales corporativos y lenguaje gráfico para empresas.
+            </p>
+            <a href="#proyectos" class="inline-block bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-6 py-3 rounded transition-colors duration-300">
+              Ver Branding
+            </a>
+          </div>
+        </div>
+
+        <!-- Slide 3: Estrategia Digital -->
+        <div class="swiper-slide relative flex items-center justify-center bg-neutral-900">
+          <img src="assets/digital-pymes.jpg" alt="Estrategia Digital" class="absolute inset-0 w-full h-full object-cover opacity-35">
+          <div class="relative z-10 max-w-4xl text-center px-6">
+            <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest bg-black/60 px-3 py-1 rounded border border-[#FFB800]/30">Digital Strategy</span>
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight mt-4 mb-4 text-white">
+              Diseño & Posicionamiento Digital
+            </h2>
+            <p class="text-neutral-300 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+              Contenido estratégico en redes sociales y diseño web enfocado en la conversión de clientes.
+            </p>
+            <a href="#contacto" class="inline-block bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-6 py-3 rounded transition-colors duration-300">
+              Cotizar Proyecto
+            </a>
+          </div>
+        </div>
+
       </div>
+
+      <!-- Controles -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next !text-[#FFB800] hidden sm:block"></div>
+      <div class="swiper-button-prev !text-[#FFB800] hidden sm:block"></div>
     </div>
   </section>
 
-  <!-- PROYECTOS SELECCIONADOS -->
-  <section id="proyectos" class="py-24 border-t border-neutral-800 px-6 max-w-6xl mx-auto">
+  <!-- ============ PROYECTOS SELECCIONADOS ============ -->
+  <section id="proyectos" class="py-24 border-t border-neutral-800 px-6 max-w-7xl mx-auto">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
       <div>
-        <span class="text-orange-500 text-xs font-mono uppercase tracking-widest">Portafolio</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold uppercase mt-2">Trabajo Seleccionado</h2>
+        <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Portafolio</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold uppercase mt-2">Trabajo Reciente</h2>
       </div>
-      <p class="text-neutral-400 text-sm max-w-md mt-4 md:mt-0">Proyectos enfocados en branding, espacio de tienda y comunicación visual.</p>
+      <p class="text-neutral-400 text-sm max-w-md mt-4 md:mt-0">Proyectos integrales entre gráfica de marca, retail y comunicación digital.</p>
     </div>
 
-    <!-- Grilla de Cards -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-3 gap-8">
       
       <!-- Card 1 -->
-      <article class="group bg-neutral-900 border border-neutral-800 rounded overflow-hidden hover:border-neutral-600 transition flex flex-col justify-between">
-        <div class="p-6">
-          <span class="text-[10px] font-mono uppercase text-orange-500">Branding & Identidad</span>
-          <h3 class="text-xl font-bold uppercase mt-2 mb-3 group-hover:text-orange-500 transition">Sistek</h3>
-          <p class="text-neutral-400 text-sm leading-relaxed mb-4">Rediseño de identidad corporativa y aplicaciones para marca tecnológica.</p>
+      <article class="group bg-neutral-900/60 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors duration-300">
+        <div>
+          <span class="text-[10px] font-mono uppercase text-[#FFB800]">Branding & Identidad</span>
+          <h3 class="text-xl font-bold uppercase mt-2 mb-3 group-hover:text-[#FFB800] transition-colors">Sistek</h3>
+          <p class="text-neutral-400 text-sm leading-relaxed mb-6">Rediseño de identidad corporativa y aplicaciones visuales para marca de telecomunicaciones.</p>
         </div>
-        <div class="p-6 pt-0">
-          <a href="#" class="text-xs font-mono uppercase text-neutral-300 hover:text-white inline-flex items-center gap-1">Ver Caso de Estudio →</a>
-        </div>
+        <a href="https://www.behance.net/gallery/248509301/Stand-Comercial-Ubiquiti-Sistek-Smart-City-Expo" target="_blank" rel="noopener" class="text-xs font-mono uppercase text-[#E84E1B] group-hover:text-[#FFB800] inline-flex items-center gap-1 transition-colors">
+          Ver en Behance →
+        </a>
       </article>
 
       <!-- Card 2 -->
-      <article class="group bg-neutral-900 border border-neutral-800 rounded overflow-hidden hover:border-neutral-600 transition flex flex-col justify-between">
-        <div class="p-6">
-          <span class="text-[10px] font-mono uppercase text-orange-500">Visual Merchandising & POS</span>
-          <h3 class="text-xl font-bold uppercase mt-2 mb-3 group-hover:text-orange-500 transition">Under Armour</h3>
-          <p class="text-neutral-400 text-sm leading-relaxed mb-4">Planimetrías, implementación gráfica y supervisión de punto de venta.</p>
+      <article class="group bg-neutral-900/60 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors duration-300">
+        <div>
+          <span class="text-[10px] font-mono uppercase text-[#FFB800]">Visual Merchandising & POS</span>
+          <h3 class="text-xl font-bold uppercase mt-2 mb-3 group-hover:text-[#FFB800] transition-colors">Under Armour</h3>
+          <p class="text-neutral-400 text-sm leading-relaxed mb-6">Planimetrías, implementación gráfica y supervisión de punto de venta.</p>
         </div>
-        <div class="p-6 pt-0">
-          <a href="#" class="text-xs font-mono uppercase text-neutral-300 hover:text-white inline-flex items-center gap-1">Ver Detalles →</a>
-        </div>
+        <a href="https://www.behance.net/" target="_blank" rel="noopener" class="text-xs font-mono uppercase text-[#E84E1B] group-hover:text-[#FFB800] inline-flex items-center gap-1 transition-colors">
+          Ver en Behance →
+        </a>
       </article>
 
       <!-- Card 3 -->
-      <article class="group bg-neutral-900 border border-neutral-800 rounded overflow-hidden hover:border-neutral-600 transition flex flex-col justify-between">
-        <div class="p-6">
-          <span class="text-[10px] font-mono uppercase text-orange-500">Estrategia Digital & Pymes</span>
-          <h3 class="text-xl font-bold uppercase mt-2 mb-3 group-hover:text-orange-500 transition">Geomarketing</h3>
-          <p class="text-neutral-400 text-sm leading-relaxed mb-4">Campañas de redes sociales, carruseles didácticos y diseño de marca.</p>
+      <article class="group bg-neutral-900/60 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors duration-300">
+        <div>
+          <span class="text-[10px] font-mono uppercase text-[#FFB800]">Diseño Espacial / Retail</span>
+          <h3 class="text-xl font-bold uppercase mt-2 mb-3 group-hover:text-[#FFB800] transition-colors">Castaño</h3>
+          <p class="text-neutral-400 text-sm leading-relaxed mb-6">Adaptación gráfica para vitrinas y señalética comercial en sucursales.</p>
         </div>
-        <div class="p-6 pt-0">
-          <a href="#" class="text-xs font-mono uppercase text-neutral-300 hover:text-white inline-flex items-center gap-1">Ver Detalles →</a>
-        </div>
+        <a href="https://www.behance.net/" target="_blank" rel="noopener" class="text-xs font-mono uppercase text-[#E84E1B] group-hover:text-[#FFB800] inline-flex items-center gap-1 transition-colors">
+          Ver en Behance →
+        </a>
       </article>
 
     </div>
   </section>
 
-  <!-- SERVICIOS -->
-  <section id="servicios" class="py-24 border-t border-neutral-800 bg-neutral-900/50 px-6">
-    <div class="max-w-6xl mx-auto">
-      <span class="text-orange-500 text-xs font-mono uppercase tracking-widest">Especialidades</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold uppercase mt-2 mb-12">Lo que puedo hacer por tu marca</h2>
+  <!-- ============ SERVICIOS ============ -->
+  <section id="servicios" class="py-24 border-t border-neutral-800 bg-neutral-900/40 px-6">
+    <div class="max-w-7xl mx-auto">
+      <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Especialidades</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold uppercase mt-2 mb-12">Servicios del Estudio</h2>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 border border-neutral-800 bg-neutral-950 rounded">
-          <h3 class="text-lg font-bold uppercase mb-3 text-orange-500">01. Identidad Visual</h3>
-          <p class="text-neutral-400 text-sm leading-relaxed">Diseño de logotipos, manuales de marca, sistemas tipográficos y material corporativo para negocios en crecimiento.</p>
+        <div class="p-6 border border-neutral-800 bg-[#121212] rounded">
+          <h3 class="text-lg font-bold uppercase mb-3 text-[#FFB800]">01. Identidad Visual</h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">Logotipos, sistemas de marca, manuales corporativos y material impreso/digital de alto estándar.</p>
         </div>
 
-        <div class="p-6 border border-neutral-800 bg-neutral-950 rounded">
-          <h3 class="text-lg font-bold uppercase mb-3 text-orange-500">02. Visual Merchandising</h3>
-          <p class="text-neutral-400 text-sm leading-relaxed">Planimetría para tiendas, diseño de vitrinas, material POP/POS y arquitectura gráfica comercial.</p>
+        <div class="p-6 border border-neutral-800 bg-[#121212] rounded">
+          <h3 class="text-lg font-bold uppercase mb-3 text-[#FFB800]">02. Visual Merchandising</h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">Diseño de vitrinas, planimetría para tiendas, arquitectura gráfica comercial y material POS/POP.</p>
         </div>
 
-        <div class="p-6 border border-neutral-800 bg-neutral-950 rounded">
-          <h3 class="text-lg font-bold uppercase mb-3 text-orange-500">03. Contenido Digital</h3>
-          <p class="text-neutral-400 text-sm leading-relaxed">Piezas para Instagram, diseño web minimalista, banners y estrategia gráfica para potenciar PYMES.</p>
+        <div class="p-6 border border-neutral-800 bg-[#121212] rounded">
+          <h3 class="text-lg font-bold uppercase mb-3 text-[#FFB800]">03. Estrategia & Social Media</h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">Carruseles didácticos, diseño web minimalista y contenido gráfico para la aceleración de marcas.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER / CONTACTO -->
-  <footer id="contacto" class="py-20 border-t border-neutral-800 px-6 max-w-6xl mx-auto">
+  <!-- ============ FOOTER / CONTACTO ============ -->
+  <footer id="contacto" class="py-20 border-t border-neutral-800 px-6 max-w-7xl mx-auto">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
       <div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold uppercase">¿Tienes un proyecto en mente?</h2>
-        <p class="text-neutral-400 text-sm mt-2">Hablemos sobre cómo llevar la imagen de tu marca al siguiente nivel.</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold uppercase">¿Listo para impulsar tu marca?</h2>
+        <p class="text-neutral-400 text-sm mt-2">Hablemos sobre tu próximo proyecto comercial o estratégico.</p>
       </div>
-      <a href="mailto:contacto@mcstudio.cl" class="bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm uppercase px-8 py-4 rounded transition">Enviar Mensaje</a>
+      <a href="mailto:contacto@mcstudio.cl" class="bg-[#E84E1B] hover:bg-[#FFB800] text-white font-bold text-sm uppercase px-8 py-4 rounded transition-colors duration-300">
+        Enviar Mensaje
+      </a>
     </div>
     <div class="mt-16 pt-8 border-t border-neutral-800 text-xs text-neutral-500 flex flex-col sm:flex-row justify-between gap-4">
-      <p>© MC Studio. Todos los derechos reservados.</p>
+      <p>© MC Estudio de Diseño. Todos los derechos reservados.</p>
       <p>Santiago, Chile</p>
     </div>
   </footer>
 
+  <!-- Swiper JS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.hero-swiper', {
+      loop: true,
+      autoplay: {
+        delay: 4500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
 </body>
 </html>
