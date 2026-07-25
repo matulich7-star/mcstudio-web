@@ -8,7 +8,7 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Swiper.js CSS (Carrusel) -->
+  <!-- Swiper.js CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <!-- Tipografía Inter -->
@@ -18,13 +18,12 @@
 
   <style>
     body { font-family: 'Inter', sans-serif; }
-    /* Estilos personalizados para los puntos del carrusel */
     .swiper-pagination-bullet-active {
       background-color: #FFB800 !important;
     }
   </style>
 </head>
-<body class="bg-[#121212] text-neutral-100 antialiased selection:bg-[#E84E1B] selection:text-white">
+<body class="bg-[#121212] text-neutral-100 antialiased selection:bg-[#E84E1B] selection:text-white flex flex-col min-h-screen">
 
   <!-- ============ NAVEGACIÓN ============ -->
   <header class="fixed top-0 w-full z-50 bg-[#121212]/90 backdrop-blur-md border-b border-neutral-800">
@@ -32,7 +31,6 @@
       
       <!-- LOGO MC ESTUDIO -->
       <a href="#" class="flex items-center gap-3">
-        <!-- Reemplaza 'assets/logo-mc.png' por la ruta final de tu imagen -->
         <img src="assets/logo-mc.png" alt="MC Estudio de Diseño" class="h-10 w-auto" onerror="this.onerror=null; this.src=''; this.alt='MC ESTUDIO DE DISEÑO'; this.className='font-bold tracking-wider uppercase text-white';">
       </a>
 
@@ -40,7 +38,7 @@
       <nav class="hidden md:flex gap-8 text-sm font-medium text-neutral-400">
         <a href="#proyectos" class="hover:text-[#FFB800] transition-colors">Proyectos</a>
         <a href="#servicios" class="hover:text-[#FFB800] transition-colors">Servicios</a>
-        <a href="#sobre-mi" class="hover:text-[#FFB800] transition-colors">Sobre mí</a>
+        <a href="#contacto" class="hover:text-[#FFB800] transition-colors">Contacto</a>
       </nav>
 
       <!-- Botón CTA -->
@@ -51,7 +49,7 @@
   </header>
 
   <!-- ============ HERO CON CARRUSEL DE BANNERS ============ -->
-  <section class="pt-20 bg-[#121212]">
+  <section class="pt-20 bg-[#121212] w-full">
     <div class="swiper hero-swiper w-full h-[75vh] min-h-[500px]">
       <div class="swiper-wrapper">
         
@@ -108,7 +106,6 @@
 
       </div>
 
-      <!-- Controles -->
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next !text-[#FFB800] hidden sm:block"></div>
       <div class="swiper-button-prev !text-[#FFB800] hidden sm:block"></div>
@@ -116,85 +113,64 @@
   </section>
 
   <!-- ============ PROYECTOS SELECCIONADOS ============ -->
-  <section id="proyectos" class="py-24 border-t border-neutral-800 px-6 max-w-7xl mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
-      <div>
-        <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Portafolio</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold uppercase mt-2">Trabajo Reciente</h2>
+  <section id="proyectos" class="py-24 border-t border-neutral-800 w-full bg-[#121212]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+        <div>
+          <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Portafolio</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold uppercase mt-2">Trabajo Reciente</h2>
+        </div>
+        <p class="text-neutral-400 text-sm max-w-md mt-4 md:mt-0">Proyectos integrales entre gráfica de marca, retail y comunicación digital.</p>
       </div>
-      <p class="text-neutral-400 text-sm max-w-md mt-4 md:mt-0">Proyectos integrales entre gráfica de marca, retail y comunicación digital.</p>
-    </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      
-      <!-- Card 1 -->
-      <article class="group bg-neutral-900/60 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors duration-300">
-        <div>
-          <span class="text-[10px] font-mono uppercase text-[#FFB800]">Branding & Identidad</span>
-          <h3 class="text-xl font-bold uppercase mt-2 mb-3 group-hover:text-[#FFB800] transition-colors">Sistek</h3>
-          <p class="text-neutral-400 text-sm leading-relaxed mb-6">Rediseño de identidad corporativa y aplicaciones visuales para marca de telecomunicaciones.</p>
-        </div>
-        <a href="https://www.behance.net/gallery/248509301/Stand-Comercial-Ubiquiti-Sistek-Smart-City-Expo" target="_blank" rel="noopener" class="text-xs font-mono uppercase text-[#E84E1B] group-hover:text-[#FFB800] inline-flex items-center gap-1 transition-colors">
-          Ver en Behance →
-        </a>
-      </article>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Sistek -->
+        <article class="group bg-neutral-900/60 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors duration-300">
+          <div>
+            <span class="text-[10px] font-mono uppercase text-[#FFB800]">Branding & Identidad</span>
+            <h3 class="text-xl font-bold uppercase mt-2 mb-3 group-hover:text-[#FFB800] transition-colors">Sistek</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-6">Rediseño de identidad corporativa y aplicaciones visuales para marca de telecomunicaciones.</p>
+          </div>
+          <a href="https://www.behance.net/gallery/248509301/Stand-Comercial-Ubiquiti-Sistek-Smart-City-Expo" target="_blank" rel="noopener" class="text-xs font-mono uppercase text-[#E84E1B] group-hover:text-[#FFB800] inline-flex items-center gap-1 transition-colors">
+            Ver en Behance →
+          </a>
+        </article>
 
-      <!-- Card 2: Under Armour -->
-<article class="group bg-neutral-900/60 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors duration-300">
-  <div>
-    <span class="text-[10px] font-mono uppercase text-[#FFB800]">Visual Merchandising & POS</span>
-    <h3 class="text-xl font-bold uppercase mt-2 mb-3 group-hover:text-[#FFB800] transition-colors">Under Armour</h3>
-    <p class="text-neutral-400 text-sm leading-relaxed mb-6">Exhibición, vitrinas y supervisión gráfica de material POP para tiendas en retail.</p>
-  </div>
-  <a href="https://www.behance.net/gallery/75206223/Exhibicion-vitrinas-y-visual-merchandising-Under-Armour" target="_blank" rel="noopener" class="text-xs font-mono uppercase text-[#E84E1B] group-hover:text-[#FFB800] inline-flex items-center gap-1 transition-colors">
-    Ver en Behance →
-  </a>
-</article>
+        <!-- Card 2: Under Armour -->
+        <article class="group bg-neutral-900/60 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors duration-300">
+          <div>
+            <span class="text-[10px] font-mono uppercase text-[#FFB800]">Visual Merchandising & POS</span>
+            <h3 class="text-xl font-bold uppercase mt-2 mb-3 group-hover:text-[#FFB800] transition-colors">Under Armour</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-6">Exhibición, vitrinas y supervisión gráfica de material POP para tiendas en retail.</p>
+          </div>
+          <a href="https://www.behance.net/gallery/75206223/Exhibicion-vitrinas-y-visual-merchandising-Under-Armour" target="_blank" rel="noopener" class="text-xs font-mono uppercase text-[#E84E1B] group-hover:text-[#FFB800] inline-flex items-center gap-1 transition-colors">
+            Ver en Behance →
+          </a>
+        </article>
 
-     <!-- Card 3: Branding & Logotipos -->
-      <article class="group bg-neutral-900/60 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors duration-300">
-        <div>
-          <span class="text-[10px] font-mono uppercase text-[#FFB800]">Branding & Logotipos</span>
-          <h3 class="text-xl font-bold uppercase mt-2 mb-3 group-hover:text-[#FFB800] transition-colors">Identidad de Marcas</h3>
-          <p class="text-neutral-400 text-sm leading-relaxed mb-6">Diseño de logotipos, manuales de marca y sistemas visuales corporativos para empresas y emprendimientos.</p>
-        </div>
-        <a href="https://www.behance.net/" target="_blank" rel="noopener" class="text-xs font-mono uppercase text-[#E84E1B] group-hover:text-[#FFB800] inline-flex items-center gap-1 transition-colors">
-          Ver en Behance →
-        </a>
-      </article>
+        <!-- Card 3: Branding & Logotipos -->
+        <article class="group bg-neutral-900/60 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors duration-300">
+          <div>
+            <span class="text-[10px] font-mono uppercase text-[#FFB800]">Branding & Logotipos</span>
+            <h3 class="text-xl font-bold uppercase mt-2 mb-3 group-hover:text-[#FFB800] transition-colors">Identidad de Marcas</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-6">Diseño de logotipos, manuales de marca y sistemas visuales corporativos para empresas y emprendimientos.</p>
+          </div>
+          <a href="https://www.behance.net/" target="_blank" rel="noopener" class="text-xs font-mono uppercase text-[#E84E1B] group-hover:text-[#FFB800] inline-flex items-center gap-1 transition-colors">
+            Ver en Behance →
+          </a>
+        </article>
 
-  <!-- ============ SERVICIOS ============ -->
-  <section id="servicios" class="py-24 border-t border-neutral-800 bg-neutral-900/40 px-6">
-    <div class="max-w-7xl mx-auto">
-      <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Especialidades</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold uppercase mt-2 mb-12">Servicios del Estudio</h2>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 border border-neutral-800 bg-[#121212] rounded">
-          <h3 class="text-lg font-bold uppercase mb-3 text-[#FFB800]">01. Identidad Visual</h3>
-          <p class="text-neutral-400 text-sm leading-relaxed">Logotipos, sistemas de marca, manuales corporativos y material impreso/digital de alto estándar.</p>
-        </div>
-
-        <div class="p-6 border border-neutral-800 bg-[#121212] rounded">
-          <h3 class="text-lg font-bold uppercase mb-3 text-[#FFB800]">02. Visual Merchandising</h3>
-          <p class="text-neutral-400 text-sm leading-relaxed">Diseño de vitrinas, planimetría para tiendas, arquitectura gráfica comercial y material POS/POP.</p>
-        </div>
-
-        <div class="p-6 border border-neutral-800 bg-[#121212] rounded">
-          <h3 class="text-lg font-bold uppercase mb-3 text-[#FFB800]">03. Estrategia & Social Media</h3>
-          <p class="text-neutral-400 text-sm leading-relaxed">Carruseles didácticos, diseño web minimalista y contenido gráfico para la aceleración de marcas.</p>
-        </div>
       </div>
     </div>
   </section>
 
- <!-- ============ SERVICIOS ============ -->
+  <!-- ============ SERVICIOS ============ -->
   <section id="servicios" class="py-24 border-t border-neutral-800 bg-neutral-900/40 w-full">
     <div class="max-w-7xl mx-auto px-6">
       <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Especialidades</span>
       <h2 class="text-3xl sm:text-4xl font-extrabold uppercase mt-2 mb-12">Servicios del Estudio</h2>
 
-      <!-- Grilla de 3 columnas bien espaciadas -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="p-8 border border-neutral-800 bg-[#121212] rounded-lg">
           <h3 class="text-xl font-bold uppercase mb-4 text-[#FFB800]">01. Identidad Visual</h3>
@@ -214,8 +190,8 @@
     </div>
   </section>
 
-  <!-- ============ FOOTER / CONTACTO (DEBAJO DE SERVICIOS) ============ -->
-  <footer id="contacto" class="py-20 border-t border-neutral-800 w-full bg-[#121212]">
+  <!-- ============ FOOTER / CONTACTO ============ -->
+  <footer id="contacto" class="py-20 border-t border-neutral-800 w-full bg-[#121212] mt-auto">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
         <div>
@@ -233,3 +209,25 @@
       </div>
     </div>
   </footer>
+
+  <!-- Swiper JS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.hero-swiper', {
+      loop: true,
+      autoplay: {
+        delay: 4500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+</body>
+</html>
