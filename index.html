@@ -22,53 +22,48 @@
       background-color: #FFB800 !important;
     }
   </style>
-<!-- ============ 1. NAVEGACIÓN SIMPLE ============ -->
-  <header class="fixed top-0 w-full z-50 bg-[#121212]/90 backdrop-blur-md border-b border-neutral-800">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+</head>
+<body class="bg-[#121212] text-neutral-100 antialiased selection:bg-[#E84E1B] selection:text-white">
+
+  <!-- ============ 1. NAVEGACIÓN SIMPLE (CABECERA) ============ -->
+  <header class="fixed top-0 w-full z-50 bg-[#121212]/95 backdrop-blur-md border-b border-neutral-800">
+    <div class="max-w-6xl mx-auto px-6 h-24 flex items-center justify-between">
       
-      <!-- LOGO MC ESTUDIO -->
+      <!-- LOGO DE LA WEB (Optimizado para lienzo cuadrado 1080x1080) -->
       <a href="#" class="flex items-center h-full py-2">
         <img 
           src="assets/img/logo-mc.png" 
           alt="MC Estudio de Diseño" 
-          class="h-full w-auto object-contain max-h-12"
-        >
-      </a>
-
-      <!-- BOTÓN CONTACTO -->
-      <a href="#contacto" class="bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-4 py-2 rounded transition-colors duration-300">
-        Contacto
-      </a>
-    </div>
-  </header>
-      
-      <!-- LOGO DE LA WEB -->
-      <a href="#" class="flex items-center">
-        <img 
-          src="assets/logo-mc.png" 
-          alt="MC Estudio de Diseño" 
-          class="h-12 w-auto object-contain py-1"
+          class="h-20 w-auto object-contain scale-125 origin-left"
           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
         >
-        <span class="hidden font-extrabold tracking-wider text-sm uppercase text-white">
+        <span class="hidden font-extrabold tracking-wider text-base uppercase text-white">
           MC Estudio
         </span>
       </a>
 
-      <a href="#contacto" class="bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-4 py-2 rounded transition-colors duration-300">
-        Contacto
-      </a>
+      <!-- MENÚ Y BOTÓN CONTACTO -->
+      <div class="flex items-center gap-6">
+        <nav class="hidden sm:flex gap-6 text-xs uppercase tracking-wider font-semibold text-neutral-400">
+          <a href="#proyectos" class="hover:text-[#FFB800] transition-colors">Proyectos</a>
+          <a href="#servicios" class="hover:text-[#FFB800] transition-colors">Servicios</a>
+        </nav>
+        <a href="#contacto" class="bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-5 py-2.5 rounded transition-colors duration-300">
+          Contacto
+        </a>
+      </div>
+
     </div>
   </header>
 
   <!-- ============ 2. HERO CARRUSEL ============ -->
-  <section class="pt-16">
+  <section class="pt-24">
     <div class="swiper hero-swiper w-full h-[65vh] min-h-[420px]">
       <div class="swiper-wrapper">
         
         <!-- Slide 1 -->
         <div class="swiper-slide relative flex items-center justify-center bg-neutral-900">
-          <img src="assets/stand-sistek.jpg" alt="Visual Merchandising" class="absolute inset-0 w-full h-full object-cover opacity-30">
+          <img src="assets/img/whatsapp-image-2026-04-26-at-14.25.29-4-jpeg.jpeg" alt="Visual Merchandising" class="absolute inset-0 w-full h-full object-cover opacity-30" onerror="this.src='https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80';">
           <div class="relative z-10 max-w-3xl text-center px-6">
             <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Visual Merchandising & POS</span>
             <h1 class="text-3xl sm:text-5xl font-extrabold uppercase mt-3 mb-4 text-white">
@@ -85,7 +80,7 @@
 
         <!-- Slide 2 -->
         <div class="swiper-slide relative flex items-center justify-center bg-neutral-900">
-          <img src="assets/branding-mc.jpg" alt="Branding" class="absolute inset-0 w-full h-full object-cover opacity-30">
+          <img src="assets/img/chatgpt-image-27-abr-2026-05_23_10-p.m..png" alt="Branding" class="absolute inset-0 w-full h-full object-cover opacity-30" onerror="this.src='https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=1200&q=80';">
           <div class="relative z-10 max-w-3xl text-center px-6">
             <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Brand Identity</span>
             <h2 class="text-3xl sm:text-5xl font-extrabold uppercase mt-3 mb-4 text-white">
@@ -102,7 +97,7 @@
 
         <!-- Slide 3 -->
         <div class="swiper-slide relative flex items-center justify-center bg-neutral-900">
-          <img src="assets/digital-pymes.jpg" alt="Estrategia Digital" class="absolute inset-0 w-full h-full object-cover opacity-30">
+          <img src="assets/img/whatsapp-image-2026-04-26-at-14.25.29-4-jpeg.jpeg" alt="Estrategia Digital" class="absolute inset-0 w-full h-full object-cover opacity-30" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80';">
           <div class="relative z-10 max-w-3xl text-center px-6">
             <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Digital Strategy</span>
             <h2 class="text-3xl sm:text-5xl font-extrabold uppercase mt-3 mb-4 text-white">
@@ -175,8 +170,8 @@
     </div>
   </section>
 
-  <!-- ============ 4. SERVICIOS RÁPIDOS ============ -->
-  <section class="py-20 border-t border-neutral-800 bg-neutral-950">
+  <!-- ============ 4. SERVICIOS ============ -->
+  <section id="servicios" class="py-20 border-t border-neutral-800 bg-neutral-950">
     <div class="max-w-6xl mx-auto px-6">
       
       <div class="mb-12 text-center md:text-left">
@@ -207,7 +202,7 @@
     </div>
   </section>
 
-  <!-- ============ 5. LLAMADO A LA ACCIÓN (CONTACTO) ============ -->
+  <!-- ============ 5. CONTACTO ============ -->
   <section id="contacto" class="py-20 border-t border-neutral-800 text-center px-6">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl sm:text-4xl font-extrabold uppercase mb-4">¿Tienes un proyecto en mente?</h2>
