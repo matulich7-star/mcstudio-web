@@ -273,6 +273,7 @@
             border: 1px solid var(--border-color);
             aspect-ratio: 1;
             position: relative;
+            display: block;
         }
 
         .project-card img {
@@ -286,6 +287,40 @@
         .project-card:hover img {
             filter: grayscale(0%);
             transform: scale(1.05);
+        }
+
+        /* Overlays informativos al hacer Hover */
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-category {
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 5px;
+        }
+
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-white);
+            line-height: 1.2;
         }
 
         /* --- CTA BANNER --- */
@@ -441,24 +476,41 @@
         </div>
 
         <div class="projects-grid">
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=600" alt="Proyecto Retail 1">
-            </div>
-            <div class="project-card">
+            <!-- PROYECTO 1: UBIQUITI / SISTEK (NUEVO ENLACE BEHANCE) -->
+            <a href="https://www.behance.net/gallery/248509301/Stand-Comercial-Ubiquiti-Sistek-Smart-City-Expo" target="_blank" rel="noopener noreferrer" class="project-card">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/9b2756248509301.670e309cb8e29.jpg" alt="Stand Comercial Ubiquiti Sistek Smart City Expo">
+                <div class="project-overlay">
+                    <span class="project-category">Stand / Arquitectura Efímera</span>
+                    <h3 class="project-title">Ubiquiti / Sistek – Smart City ↗</h3>
+                </div>
+            </a>
+
+            <!-- PROYECTO 2 -->
+            <a href="#" class="project-card">
                 <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=600" alt="Proyecto Retail 2">
-            </div>
-            <div class="project-card">
+                <div class="project-overlay">
+                    <span class="project-category">Visual Merchandising</span>
+                    <h3 class="project-title">Layout & Concept Store ↗</h3>
+                </div>
+            </a>
+
+            <!-- PROYECTO 3 -->
+            <a href="#" class="project-card">
                 <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=600" alt="Proyecto Retail 3">
-            </div>
+                <div class="project-overlay">
+                    <span class="project-category">Material POP</span>
+                    <h3 class="project-title">Exhibidores de Marca ↗</h3>
+                </div>
+            </a>
         </div>
     </section>
 
-    <!-- CTA FOOTER (LIME EN LA IMAGEN / NARANJA EN MC ESTUDIO) -->
+    <!-- CTA FOOTER -->
     <section class="cta-section" id="contacto">
         <h2>¿Tienes un proyecto en mente?<br>Hagámoslo realidad</h2>
         <div class="cta-buttons">
-            <a href="#" class="btn-dark">Escríbenos Hoy</a>
-            <a href="#" class="btn-outline">Ver Portafolio</a>
+            <a href="#contacto" class="btn-dark">Escríbenos Hoy</a>
+            <a href="https://www.behance.net/gallery/248509301/Stand-Comercial-Ubiquiti-Sistek-Smart-City-Expo" target="_blank" rel="noopener noreferrer" class="btn-outline">Ver Portafolio</a>
         </div>
     </section>
 
