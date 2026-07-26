@@ -253,16 +253,17 @@
             border-radius: 20px;
         }
 
-        /* --- SECCIÓN PORTAFOLIO / BEST PROJECT --- */
+        /* --- SECCIÓN PORTAFOLIO / PROYECTOS --- */
         .portfolio {
             padding: 0 5% 100px 5%;
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 20px;
             margin-top: 40px;
+            width: 100%;
         }
 
         .project-card {
@@ -273,14 +274,17 @@
             position: relative;
             display: block;
             width: 100%;
-            aspect-ratio: 1 / 1; /* Mantiene la proporción cuadrada perfecta */
+            height: 0;
+            padding-bottom: 100%; /* Proporción 1:1 estricta e inquebrantable */
         }
 
         .project-card img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
             filter: grayscale(30%);
             transition: filter 0.3s ease, transform 0.4s ease;
         }
@@ -290,7 +294,7 @@
             transform: scale(1.05);
         }
 
-        /* Overlays informativos al hacer Hover */
+        /* Capa informativa al pasar el cursor */
         .project-overlay {
             position: absolute;
             inset: 0;
@@ -386,7 +390,7 @@
                 font-size: 2.8rem;
             }
             .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
@@ -480,7 +484,7 @@
         <div class="projects-grid">
             <!-- PROYECTO 1: UBIQUITI / SISTEK -->
             <a href="https://www.behance.net/gallery/248509301/Stand-Comercial-Ubiquiti-Sistek-Smart-City-Expo" target="_blank" rel="noopener noreferrer" class="project-card">
-                <!-- Reemplaza "stand-ubiquiti.jpg" con el nombre de tu archivo guardado localmente -->
+                <!-- Reemplaza "stand-ubiquiti.jpg" con el nombre o ruta exacta de tu imagen local -->
                 <img src="stand-ubiquiti.jpg" alt="Stand Comercial Ubiquiti Sistek Smart City Expo">
                 <div class="project-overlay">
                     <span class="project-category">Stand / Arquitectura Efímera</span>
