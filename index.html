@@ -27,7 +27,34 @@
 
   <!-- ============ 1. NAVEGACIÓN SIMPLE (CABECERA) ============ -->
   <header class="fixed top-0 w-full z-50 bg-[#121212]/95 backdrop-blur-md border-b border-neutral-800">
-    <div class="max-w-6xl mx-auto px-6 h-24 flex items-center justify-between">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- LOGO CON SUPER ZOOM Y FILTRO BLANCO/BRILLANTE -->
+      <a href="#" class="flex items-center h-full overflow-hidden">
+        <img 
+          src="assets/img/logo-mc.png" 
+          alt="MC Estudio de Diseño" 
+          class="h-44 w-auto object-cover transform scale-[2.2] translate-x-4 brightness-200 contrast-200"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        >
+        <span class="hidden font-extrabold tracking-wider text-base uppercase text-white">
+          MC Estudio
+        </span>
+      </a>
+
+      <!-- MENÚ Y BOTÓN CONTACTO -->
+      <div class="flex items-center gap-6">
+        <nav class="hidden sm:flex gap-6 text-xs uppercase tracking-wider font-semibold text-neutral-400">
+          <a href="#proyectos" class="hover:text-[#FFB800] transition-colors">Proyectos</a>
+          <a href="#servicios" class="hover:text-[#FFB800] transition-colors">Servicios</a>
+        </nav>
+        <a href="#contacto" class="bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-5 py-2.5 rounded transition-colors duration-300">
+          Contacto
+        </a>
+      </div>
+
+    </div>
+  </header>
       
       <!-- LOGO DE LA WEB (Optimizado para lienzo cuadrado 1080x1080) -->
       <a href="#" class="flex items-center h-full py-2">
