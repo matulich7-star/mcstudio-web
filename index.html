@@ -1,268 +1,192 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MC Estudio de Diseño | Visual Merchandising & Branding</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC Estudio | Diseño Espacial & Retail</title>
+    <!-- Fuente Montserrat desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESETS GENERALES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Swiper.js CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        body {
+            background-color: #121212;
+            color: #ffffff;
+        }
 
-  <!-- Tipografía Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+        /* --- HEADER / ENCABEZADO --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .swiper-pagination-bullet-active {
-      background-color: #FFB800 !important;
-    }
-  </style>
+        .logo a {
+            color: #FFFFFF;
+            font-weight: 800;
+            font-size: 1.5rem;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #d1d1d1;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff5522;
+        }
+
+        /* Botón Destacado del Menú */
+        .btn-contacto {
+            background-color: #ff5522;
+            color: #ffffff !important;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s ease !important;
+        }
+
+        .btn-contacto:hover {
+            background-color: #e04411 !important;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                        url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1920') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .kicker {
+            color: #ff5522;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .main-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #cccccc;
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background-color: #ff5522;
+            color: #ffffff;
+            padding: 14px 36px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-main:hover {
+            background-color: #e04411;
+            transform: translateY(-2px);
+        }
+
+        /* --- ADAPTABILIDAD MÓVIL --- */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 5%;
+            }
+            .nav-links {
+                gap: 15px;
+            }
+            .nav-links a {
+                font-size: 0.75rem;
+            }
+            .main-title {
+                font-size: 2.1rem;
+            }
+            .subtitle {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
-<body class="bg-[#121212] text-neutral-100 antialiased selection:bg-[#E84E1B] selection:text-white">
+<body>
 
-  <!-- ============ 1. NAVEGACIÓN SIMPLE (CABECERA) ============ -->
-  <header class="fixed top-0 w-full z-50 bg-[#121212]/95 backdrop-blur-md border-b border-neutral-800">
-    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-      
-      <!-- LOGO CON SUPER ZOOM Y FILTRO BLANCO/BRILLANTE -->
-      <a href="#" class="flex items-center h-full overflow-hidden">
-        <img 
-          src="assets/img/logo-mc.png" 
-          alt="MC Estudio de Diseño" 
-          class="h-44 w-auto object-cover transform scale-[2.2] translate-x-4 brightness-200 contrast-200"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-        >
-        <span class="hidden font-extrabold tracking-wider text-base uppercase text-white">
-          MC Estudio
-        </span>
-      </a>
-
-      <!-- MENÚ Y BOTÓN CONTACTO -->
-      <div class="flex items-center gap-6">
-        <nav class="hidden sm:flex gap-6 text-xs uppercase tracking-wider font-semibold text-neutral-400">
-          <a href="#proyectos" class="hover:text-[#FFB800] transition-colors">Proyectos</a>
-          <a href="#servicios" class="hover:text-[#FFB800] transition-colors">Servicios</a>
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="#">MC ESTUDIO</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#proyectos">PROYECTOS</a></li>
+                <li><a href="#servicios">SERVICIOS</a></li>
+                <li><a href="#contacto" class="btn-contacto">CONTACTO</a></li>
+            </ul>
         </nav>
-        <a href="#contacto" class="bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-5 py-2.5 rounded transition-colors duration-300">
-          Contacto
-        </a>
-      </div>
+    </header>
 
-    </div>
-  </header>
-      
-      <!-- LOGO DE LA WEB (Optimizado para lienzo cuadrado 1080x1080) -->
-      <a href="#" class="flex items-center h-full py-2">
-        <img 
-          src="assets/img/logo-mc.png" 
-          alt="MC Estudio de Diseño" 
-          class="h-20 w-auto object-contain scale-125 origin-left"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-        >
-        <span class="hidden font-extrabold tracking-wider text-base uppercase text-white">
-          MC Estudio
-        </span>
-      </a>
-
-      <!-- MENÚ Y BOTÓN CONTACTO -->
-      <div class="flex items-center gap-6">
-        <nav class="hidden sm:flex gap-6 text-xs uppercase tracking-wider font-semibold text-neutral-400">
-          <a href="#proyectos" class="hover:text-[#FFB800] transition-colors">Proyectos</a>
-          <a href="#servicios" class="hover:text-[#FFB800] transition-colors">Servicios</a>
-        </nav>
-        <a href="#contacto" class="bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-5 py-2.5 rounded transition-colors duration-300">
-          Contacto
-        </a>
-      </div>
-
-    </div>
-  </header>
-
-  <!-- ============ 2. HERO CARRUSEL ============ -->
-  <section class="pt-24">
-    <div class="swiper hero-swiper w-full h-[65vh] min-h-[420px]">
-      <div class="swiper-wrapper">
-        
-        <!-- Slide 1 -->
-        <div class="swiper-slide relative flex items-center justify-center bg-neutral-900">
-          <img src="assets/img/whatsapp-image-2026-04-26-at-14.25.29-4-jpeg.jpeg" alt="Visual Merchandising" class="absolute inset-0 w-full h-full object-cover opacity-30" onerror="this.src='https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80';">
-          <div class="relative z-10 max-w-3xl text-center px-6">
-            <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Visual Merchandising & POS</span>
-            <h1 class="text-3xl sm:text-5xl font-extrabold uppercase mt-3 mb-4 text-white">
-              Diseño Espacial & Retail
-            </h1>
-            <p class="text-neutral-300 text-sm max-w-lg mx-auto mb-6">
-              Planimetrías, exhibidores, vitrinismo y material POP para proyectar tu marca en el punto de venta.
-            </p>
-            <a href="#proyectos" class="inline-block bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-6 py-3 rounded transition-colors">
-              Ver Trabajos
-            </a>
-          </div>
+    <!-- SECCIÓN PRINCIPAL (HERO) -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="kicker">Visual Merchandising & POS</p>
+            <h1 class="main-title">Diseño Espacial & Retail</h1>
+            <p class="subtitle">Planimetrías, exhibidores, vitrinismo y material POP para proyectar tu marca en el punto de venta.</p>
+            <a href="#proyectos" class="btn-main">VER TRABAJOS</a>
         </div>
-
-        <!-- Slide 2 -->
-        <div class="swiper-slide relative flex items-center justify-center bg-neutral-900">
-          <img src="assets/img/chatgpt-image-27-abr-2026-05_23_10-p.m..png" alt="Branding" class="absolute inset-0 w-full h-full object-cover opacity-30" onerror="this.src='https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=1200&q=80';">
-          <div class="relative z-10 max-w-3xl text-center px-6">
-            <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Brand Identity</span>
-            <h2 class="text-3xl sm:text-5xl font-extrabold uppercase mt-3 mb-4 text-white">
-              Branding & Logotipos
-            </h2>
-            <p class="text-neutral-300 text-sm max-w-lg mx-auto mb-6">
-              Creación de marcas con propósito, manuales corporativos y lenguaje gráfico para empresas.
-            </p>
-            <a href="#proyectos" class="inline-block bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-6 py-3 rounded transition-colors">
-              Ver Branding
-            </a>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="swiper-slide relative flex items-center justify-center bg-neutral-900">
-          <img src="assets/img/whatsapp-image-2026-04-26-at-14.25.29-4-jpeg.jpeg" alt="Estrategia Digital" class="absolute inset-0 w-full h-full object-cover opacity-30" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80';">
-          <div class="relative z-10 max-w-3xl text-center px-6">
-            <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Digital Strategy</span>
-            <h2 class="text-3xl sm:text-5xl font-extrabold uppercase mt-3 mb-4 text-white">
-              Estrategia & Redes
-            </h2>
-            <p class="text-neutral-300 text-sm max-w-lg mx-auto mb-6">
-              Diseño de carruseles, maquetación web y comunicación estratégica para PYMES.
-            </p>
-            <a href="#contacto" class="inline-block bg-[#E84E1B] hover:bg-[#FFB800] text-white font-semibold text-xs uppercase px-6 py-3 rounded transition-colors">
-              Cotizar
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-
-  <!-- ============ 3. PROYECTOS DESTACADOS ============ -->
-  <section id="proyectos" class="py-20 border-t border-neutral-800">
-    <div class="max-w-6xl mx-auto px-6">
-      
-      <div class="mb-12 text-center md:text-left">
-        <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Portafolio</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold uppercase mt-1">Trabajos Recientes</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- Tarjeta 1 -->
-        <div class="bg-neutral-900 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors">
-          <div>
-            <span class="text-[10px] font-mono uppercase text-[#FFB800]">Branding & Stand</span>
-            <h3 class="text-lg font-bold uppercase mt-2 mb-2">Sistek</h3>
-            <p class="text-neutral-400 text-xs leading-relaxed mb-6">Rediseño de identidad y gráfica para stand en Smart City Expo.</p>
-          </div>
-          <a href="https://www.behance.net/gallery/248509301/Stand-Comercial-Ubiquiti-Sistek-Smart-City-Expo" target="_blank" class="text-xs font-mono uppercase text-[#E84E1B] hover:text-[#FFB800] transition-colors">
-            Ver en Behance →
-          </a>
-        </div>
-
-        <!-- Tarjeta 2 -->
-        <div class="bg-neutral-900 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors">
-          <div>
-            <span class="text-[10px] font-mono uppercase text-[#FFB800]">Visual Merchandising</span>
-            <h3 class="text-lg font-bold uppercase mt-2 mb-2">Under Armour</h3>
-            <p class="text-neutral-400 text-xs leading-relaxed mb-6">Exhibición en tienda, vitrinismo y material POP comercial.</p>
-          </div>
-          <a href="https://www.behance.net/gallery/75206223/Exhibicion-vitrinas-y-visual-merchandising-Under-Armour" target="_blank" class="text-xs font-mono uppercase text-[#E84E1B] hover:text-[#FFB800] transition-colors">
-            Ver en Behance →
-          </a>
-        </div>
-
-        <!-- Tarjeta 3 -->
-        <div class="bg-neutral-900 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-[#FFB800]/50 transition-colors">
-          <div>
-            <span class="text-[10px] font-mono uppercase text-[#FFB800]">Branding & Logotipos</span>
-            <h3 class="text-lg font-bold uppercase mt-2 mb-2">Identidad Visual</h3>
-            <p class="text-neutral-400 text-xs leading-relaxed mb-6">Sistemas de marcas, logotipos y manuales corporativos para empresas.</p>
-          </div>
-          <a href="https://www.behance.net/" target="_blank" class="text-xs font-mono uppercase text-[#E84E1B] hover:text-[#FFB800] transition-colors">
-            Ver en Behance →
-          </a>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============ 4. SERVICIOS ============ -->
-  <section id="servicios" class="py-20 border-t border-neutral-800 bg-neutral-950">
-    <div class="max-w-6xl mx-auto px-6">
-      
-      <div class="mb-12 text-center md:text-left">
-        <span class="text-[#FFB800] text-xs font-mono uppercase tracking-widest">Soluciones</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold uppercase mt-1">¿Qué hacemos?</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="p-6 border border-neutral-800 bg-[#121212] rounded">
-          <div class="text-[#FFB800] text-xl font-extrabold mb-2">01</div>
-          <h3 class="font-bold uppercase text-white mb-2">Identidad & Branding</h3>
-          <p class="text-neutral-400 text-xs leading-relaxed">Logotipos, manuales de marca y piezas impresas o digitales con estándar corporativo.</p>
-        </div>
-
-        <div class="p-6 border border-neutral-800 bg-[#121212] rounded">
-          <div class="text-[#FFB800] text-xl font-extrabold mb-2">02</div>
-          <h3 class="font-bold uppercase text-white mb-2">Visual Merchandising</h3>
-          <p class="text-neutral-400 text-xs leading-relaxed">Vitrinas, planimetría comercial, arquitectura gráfica y supervisión de punto de venta.</p>
-        </div>
-
-        <div class="p-6 border border-neutral-800 bg-[#121212] rounded">
-          <div class="text-[#FFB800] text-xl font-extrabold mb-2">03</div>
-          <h3 class="font-bold uppercase text-white mb-2">Contenido & Redes</h3>
-          <p class="text-neutral-400 text-xs leading-relaxed">Carruseles informativos, diseño web minimalista y estrategia de comunicación.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============ 5. CONTACTO ============ -->
-  <section id="contacto" class="py-20 border-t border-neutral-800 text-center px-6">
-    <div class="max-w-2xl mx-auto">
-      <h2 class="text-3xl sm:text-4xl font-extrabold uppercase mb-4">¿Tienes un proyecto en mente?</h2>
-      <p class="text-neutral-400 text-sm mb-8 leading-relaxed">
-        Hablemos sobre cómo podemos potenciar la imagen visual de tu marca o tu espacio comercial.
-      </p>
-      <a href="mailto:contacto@mcstudio.cl" class="inline-block bg-[#E84E1B] hover:bg-[#FFB800] text-white font-bold text-xs uppercase px-8 py-4 rounded transition-colors duration-300">
-        Enviar Mensaje
-      </a>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="py-8 border-t border-neutral-800 text-center text-xs text-neutral-500">
-    <p>© MC Estudio de Diseño · Santiago, Chile</p>
-  </footer>
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.hero-swiper', {
-      loop: true,
-      autoplay: {
-        delay: 4500,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
-  </script>
+    </section>
 
 </body>
-</html>
 </html>
