@@ -253,7 +253,7 @@
             border-radius: 20px;
         }
 
-        /* --- SECCIÓN CATÁLOGO INTERACTIVO (NUEVA) --- */
+        /* --- SECCIÓN CATÁLOGO INTERACTIVO (FLIPHTML5) --- */
         .catalogo-section {
             padding: 80px 5%;
             background-color: var(--bg-card);
@@ -264,7 +264,7 @@
         }
 
         .catalogo-container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -282,21 +282,50 @@
             line-height: 1.6;
         }
 
+        .flipbook-frame {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 60%;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background-color: #000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .flipbook-frame iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .catalogo-actions {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
         .btn-catalogo {
             display: inline-block;
             background-color: var(--accent-orange);
             color: var(--text-white);
-            padding: 16px 36px;
+            padding: 14px 28px;
             border-radius: 30px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
         .btn-catalogo:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             opacity: 0.9;
         }
 
@@ -436,6 +465,9 @@
             .projects-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .flipbook-frame {
+                padding-bottom: 75%;
+            }
         }
 
         @media (max-width: 600px) {
@@ -447,6 +479,9 @@
             }
             .cta-buttons {
                 flex-direction: column;
+            }
+            .flipbook-frame {
+                padding-bottom: 100%;
             }
         }
     </style>
@@ -519,14 +554,28 @@
         <h3>Transformamos espacios comerciales en <span>Experiencias</span> de Venta</h3>
     </div>
 
-    <!-- SECCIÓN CATÁLOGO INTERACTIVO -->
+    <!-- SECCIÓN CATÁLOGO INTERACTIVO (FLIPBOOK + BOTÓN) -->
     <section class="catalogo-section" id="catalogo">
         <div class="catalogo-container">
             <h2>Catálogo Interactivo</h2>
             <p>Explora nuestra presentación corporativa completa y propuesta de servicios en un formato digital e interactivo.</p>
-            <a href="https://online.fliphtml5.com/xslij/xtsp/" target="_blank" rel="noopener noreferrer" class="btn-catalogo">
-                Ver Catálogo Interactivo ↗
-            </a>
+            
+            <div class="flipbook-frame">
+                <iframe 
+                    src="https://online.fliphtml5.com/xslij/xtsp/" 
+                    seamless="seamless" 
+                    scrolling="no" 
+                    frameborder="0" 
+                    allowtransparency="true" 
+                    allowfullscreen="true">
+                </iframe>
+            </div>
+
+            <div class="catalogo-actions">
+                <a href="https://online.fliphtml5.com/xslij/xtsp/" target="_blank" rel="noopener noreferrer" class="btn-catalogo">
+                    Abrir en pantalla completa ↗
+                </a>
+            </div>
         </div>
     </section>
 
