@@ -253,6 +253,53 @@
             border-radius: 20px;
         }
 
+        /* --- SECCIÓN CATÁLOGO INTERACTIVO (NUEVA) --- */
+        .catalogo-section {
+            padding: 80px 5%;
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 100px;
+            text-align: center;
+        }
+
+        .catalogo-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .catalogo-container h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .catalogo-container p {
+            color: var(--text-gray);
+            font-size: 1rem;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        .btn-catalogo {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: var(--text-white);
+            padding: 16px 36px;
+            border-radius: 30px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .btn-catalogo:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
         /* --- SECCIÓN PORTAFOLIO / PROYECTOS --- */
         .portfolio {
             padding: 0 5% 100px 5%;
@@ -274,7 +321,7 @@
             position: relative;
             display: block;
             width: 100%;
-            aspect-ratio: 1 / 1; /* Garantiza proporciones cuadradas estrictas */
+            aspect-ratio: 1 / 1;
         }
 
         .project-card img {
@@ -345,6 +392,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .btn-dark {
@@ -411,6 +459,7 @@
         <ul class="nav-links">
             <li><a href="#inicio">Nosotros</a></li>
             <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
             <li><a href="#contacto" class="btn-talk">Hablemos</a></li>
         </ul>
@@ -470,6 +519,17 @@
         <h3>Transformamos espacios comerciales en <span>Experiencias</span> de Venta</h3>
     </div>
 
+    <!-- SECCIÓN CATÁLOGO INTERACTIVO -->
+    <section class="catalogo-section" id="catalogo">
+        <div class="catalogo-container">
+            <h2>Catálogo Interactivo</h2>
+            <p>Explora nuestra presentación corporativa completa y propuesta de servicios en un formato digital e interactivo.</p>
+            <a href="https://online.fliphtml5.com/xslij/xtsp/" target="_blank" rel="noopener noreferrer" class="btn-catalogo">
+                Ver Catálogo Interactivo ↗
+            </a>
+        </div>
+    </section>
+
     <!-- PORTAFOLIO PROYECTOS DESTACADOS -->
     <section class="portfolio" id="proyectos">
         <div class="section-header">
@@ -512,7 +572,7 @@
         <h2>¿Tienes un proyecto en mente?<br>Hagámoslo realidad</h2>
         <div class="cta-buttons">
             <a href="#contacto" class="btn-dark">Escríbenos Hoy</a>
-            <a href="https://www.behance.net/gallery/248509301/Stand-Comercial-Ubiquiti-Sistek-Smart-City-Expo" target="_blank" rel="noopener noreferrer" class="btn-outline">Ver Portafolio</a>
+            <a href="https://online.fliphtml5.com/xslij/xtsp/" target="_blank" rel="noopener noreferrer" class="btn-outline">Ver Catálogo Digital</a>
         </div>
     </section>
 
