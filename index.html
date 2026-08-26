@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MC Studio — Diseño Comercial &amp; Retail</title>
-<meta name="description" content="MC Studio: Visual Merchandising, Trade Marketing, Branding y Diseño Gráfico. Estudio liderado por Matías Cortés, Santiago de Chile.">
+<meta name="description" content="MC Studio: Visual Merchandising, Branding y Diseño Gráfico. Estudio liderado por Matías Cortés, Santiago de Chile.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -323,7 +322,7 @@ button{ font-family:inherit; cursor:pointer; }
 /* ============================================================
    SERVICES
    ============================================================ */
-.services-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--line); border:1px solid var(--line); }
+.services-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border:1px solid var(--line); }
 @media (max-width: 940px){ .services-grid{ grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 560px){ .services-grid{ grid-template-columns: 1fr; } }
 .service-card{ background:#fff; padding: 36px 30px; transition: background var(--dur) var(--ease); }
@@ -332,6 +331,33 @@ button{ font-family:inherit; cursor:pointer; }
 .service-icon svg{ width:100%; height:100%; }
 .service-card h3{ font-size: 1.02rem; margin: 0 0 10px; letter-spacing:-.01em; }
 .service-card p{ font-size:.85rem; color: var(--graphite); margin:0; line-height:1.6; }
+
+/* ============================================================
+   TRAYECTORIA
+   ============================================================ */
+.about-grid{ display:grid; grid-template-columns: 1fr 1.3fr; gap: 56px; align-items:start; }
+@media (max-width: 860px){ .about-grid{ grid-template-columns: 1fr; gap: 40px; } }
+.about-lede{ font-size: 1.05rem; color: var(--graphite); line-height:1.7; }
+.about-lede strong{ color: var(--ink); }
+
+.skills-block{ margin-top: 30px; }
+.skills-block h4{ font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color: var(--accent); margin: 0 0 12px; }
+.skills-tags{ display:flex; flex-wrap:wrap; gap:8px; margin: 0 0 26px; }
+.skills-tags span{
+  border:1px solid var(--line); padding: 6px 12px; font-size:.75rem; font-family: var(--f-mono);
+  color: var(--graphite);
+}
+
+.timeline{ list-style:none; margin:0; padding:0; border-left: 1px solid var(--line); }
+.timeline li{ position:relative; padding: 0 0 26px 26px; }
+.timeline li:last-child{ padding-bottom:0; }
+.timeline li::before{
+  content:""; position:absolute; left:-5px; top:4px; width:9px; height:9px; border-radius:50%;
+  background: var(--paper); border:2px solid var(--accent);
+}
+.timeline .years{ font-family: var(--f-mono); font-size:.68rem; color: var(--accent); text-transform:uppercase; display:block; margin-bottom:4px; }
+.timeline h4{ font-size:1rem; margin: 0 0 4px; letter-spacing:-.01em; }
+.timeline p{ font-size:.85rem; color: var(--graphite); margin:0; line-height:1.55; }
 
 /* ============================================================
    CATALOGS
@@ -418,6 +444,7 @@ button{ font-family:inherit; cursor:pointer; }
       <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
       <a href="#portafolio">Portafolio</a>
+      <a href="#trayectoria">Trayectoria</a>
       <a href="#contacto" class="nav-cta">Contacto</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -431,7 +458,7 @@ button{ font-family:inherit; cursor:pointer; }
   <div class="wrap hero-inner">
     <span class="eyebrow mono">MC Studio — Diseño Comercial &amp; Retail</span>
     <h1>Diseño que convierte <em>vitrinas</em> en ventas.</h1>
-    <p>Estudio integral de Visual Merchandising, Trade Marketing y Branding liderado por Matías Cortés. Potenciamos la experiencia de compra en el punto de venta y en el entorno digital.</p>
+    <p>Estudio integral de Visual Merchandising y Branding liderado por Matías Cortés. Potenciamos la experiencia de compra en el punto de venta y en el entorno digital.</p>
     <div class="cta-row">
       <a href="#portafolio" class="btn btn-primary">Ver Proyectos</a>
       <a href="#contacto" class="btn btn-outline">Contactar</a>
@@ -442,8 +469,8 @@ button{ font-family:inherit; cursor:pointer; }
 <!-- ============ MARQUEE ============ -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track" id="marqueeTrack">
-    <span>Visual Merchandising <i>✦</i> Retail <i>✦</i> Trade Marketing <i>✦</i> Branding <i>✦</i> Redes Sociales <i>✦</i></span>
-    <span>Visual Merchandising <i>✦</i> Retail <i>✦</i> Trade Marketing <i>✦</i> Branding <i>✦</i> Redes Sociales <i>✦</i></span>
+    <span>Visual Merchandising <i>✦</i> Retail <i>✦</i> Branding <i>✦</i> Diseño Gráfico <i>✦</i> Redes Sociales <i>✦</i></span>
+    <span>Visual Merchandising <i>✦</i> Retail <i>✦</i> Branding <i>✦</i> Diseño Gráfico <i>✦</i> Redes Sociales <i>✦</i></span>
   </div>
 </div>
 
@@ -576,29 +603,90 @@ button{ font-family:inherit; cursor:pointer; }
           <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="14" width="28" height="20" /><path d="M6 14 10 6h20l4 8" /><path d="M14 34v-8h12v8" /></svg>
         </div>
         <h3>Visual Merchandising &amp; Retail</h3>
-        <p>Vitrinas, planogramas, mobiliario y material POP que dirigen la mirada y activan la compra.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="6" width="26" height="30" rx="1"/><path d="M13 15h14M13 21h14M13 27h8"/><path d="M15 6v-2h10v2"/></svg>
-        </div>
-        <h3>Trade Marketing &amp; Auditoría</h3>
-        <p>Supervisión en terreno, share of shelf y ejecución impecable en cada punto de venta.</p>
+        <p>Diseño y exhibición del punto de venta —vitrinas, mobiliario y material POP— que dirige la mirada del cliente y activa la compra.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">
           <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="16" r="10"/><circle cx="24" cy="24" r="10"/></svg>
         </div>
         <h3>Branding &amp; Diseño Gráfico</h3>
-        <p>Identidad corporativa, piezas editoriales y comunicación publicitaria con coherencia visual.</p>
+        <p>Construcción de identidad de marca a través de logotipos, piezas gráficas y comunicación visual coherente.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">
           <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="12" height="12"/><rect x="22" y="6" width="12" height="12"/><rect x="6" y="22" width="12" height="12"/><rect x="22" y="22" width="12" height="12"/></svg>
         </div>
         <h3>Gestión de Redes Sociales</h3>
-        <p>Estrategia de contenidos, infografías y piezas diseñadas para cada plataforma.</p>
+        <p>Planificación y diseño de contenido digital, adaptado a cada plataforma y audiencia.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRAYECTORIA ============ -->
+<section class="section" id="trayectoria">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="section-tag mono">// Trayectoria</span>
+        <h2>Experiencia</h2>
+      </div>
+      <p>Más de 10 años en retail, visual merchandising y diseño gráfico, entre oficina y terreno.</p>
+    </div>
+
+    <div class="about-grid reveal">
+      <div>
+        <p class="about-lede">Profesional del diseño especializado en <strong>Retail, Visual Merchandising y Trade Marketing</strong>, enfocado en optimizar la experiencia de compra y el rendimiento comercial en punto de venta. Experiencia en vitrinas, planogramas, mobiliario, material POP y piezas gráficas corporativas, junto a supervisión de salas a nivel nacional y auditoría de estándares de marca.</p>
+
+        <div class="skills-block">
+          <h4>Herramientas</h4>
+          <div class="skills-tags">
+            <span>Illustrator</span><span>Photoshop</span><span>InDesign</span><span>After Effects</span>
+            <span>Premiere Pro</span><span>Figma</span><span>AutoCAD 2D/3D</span><span>3ds Max</span>
+            <span>SketchUp</span><span>WordPress</span><span>Excel · PowerPoint</span><span>HTML</span>
+            <span>Canva</span><span>CapCut</span><span>Claude</span><span>ChatGPT</span><span>Gemini</span>
+          </div>
+          <h4>Educación</h4>
+          <div class="skills-tags">
+            <span>Diseño Gráfico — AIEP</span>
+            <span>Diplomado en Branding — U. Mayor</span>
+            <span>Diseñador con mención Ambientes — IPP</span>
+          </div>
+        </div>
+      </div>
+
+      <ul class="timeline">
+        <li>
+          <span class="years mono">2025 — 2026</span>
+          <h4>Asistente de Trade Marketing — Castaño</h4>
+          <p>Diseño de exhibidores y material POP, coordinación de montajes e implementación de exhibiciones en más de 77 puntos de venta a nivel nacional.</p>
+        </li>
+        <li>
+          <span class="years mono">2024 — 2025</span>
+          <h4>Diseñador Gráfico — Sistek</h4>
+          <p>Piezas gráficas y digitales para campañas corporativas, diseño de stands para ferias y apoyo en identidad visual de marca.</p>
+        </li>
+        <li>
+          <span class="years mono">2022 — 2024</span>
+          <h4>Auditor de Canal Moderno — RetailLatam (Coca-Cola)</h4>
+          <p>Auditoría en terreno y medición de share of shelf con herramientas de inteligencia artificial en el canal moderno.</p>
+        </li>
+        <li>
+          <span class="years mono">2017</span>
+          <h4>Visual Merchandising — Gotta</h4>
+          <p>Diseño de vitrinas y planogramas para la red nacional, gestión de 23 puntos de venta y capacitación de equipos.</p>
+        </li>
+        <li>
+          <span class="years mono">2014 — 2016</span>
+          <h4>Visual Merchandising &amp; Supervisor — Under Armour</h4>
+          <p>Implementación de vitrinas y campañas, supervisión de equipos en terreno en más de 110 puntos de venta.</p>
+        </li>
+        <li>
+          <span class="years mono">2012 — 2013</span>
+          <h4>Coordinador de Visual Merchandising — Phoenix Spa</h4>
+          <p>Gestión de las marcas Springfield, Cortefiel y EPK: vitrinas, layout comercial y auditorías visuales en tienda.</p>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
@@ -611,16 +699,11 @@ button{ font-family:inherit; cursor:pointer; }
         <span class="section-tag mono">// Recursos</span>
         <h2>Catálogos y presentaciones</h2>
       </div>
-      <p>Dossiers y catálogos corporativos disponibles para revisión interactiva.</p>
+      <p>Brandbook y dossiers corporativos disponibles para revisión interactiva.</p>
     </div>
 
     <div class="viewer reveal">
-      <div class="viewer-inner">
-        <span class="mono">Visor — Catálogo 2026</span>
-        <h3>Dossier corporativo MC Studio</h3>
-        <p>Espacio reservado para embeber el visor de FlipHTML5 o Issuu con el catálogo o dossier vigente.</p>
-        <a href="#contacto" class="btn btn-outline" style="border-color:#fff;color:#fff;">Solicitar catálogo</a>
-      </div>
+      <iframe src="https://online.fliphtml5.com/xslij/xtsp/" style="width:100%; height:100%; border:0; position:relative; z-index:2;" allowfullscreen scrolling="no" loading="lazy" title="Brandbook Sistek 2026"></iframe>
     </div>
   </div>
 </section>
