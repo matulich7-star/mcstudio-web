@@ -236,6 +236,13 @@ button{ font-family:inherit; cursor:pointer; }
   position:absolute; bottom:10px; right:12px; font-family:var(--f-mono); font-size:.62rem; color:rgba(255,255,255,.75); z-index:2;
 }
 
+/* Real project photography inside a card */
+.card-media img.card-photo{
+  width:100%; height:100%; object-fit:cover; object-position:center;
+  transition: transform .7s var(--ease);
+}
+.card:hover .card-photo{ transform: scale(1.06); }
+
 .card-tag{
   position:absolute; top:14px; left:14px; z-index:3; background: rgba(10,10,10,.82); color:#fff;
   font-family: var(--f-mono); font-size:.65rem; padding: 5px 10px; text-transform:uppercase; letter-spacing:.05em;
@@ -287,7 +294,17 @@ button{ font-family:inherit; cursor:pointer; }
 }
 .lightbox.open .lightbox-box{ transform: translateY(0); }
 @media (max-width: 760px){ .lightbox-box{ grid-template-columns: 1fr; } }
-.lightbox-media{ aspect-ratio: 4/3; position:relative; }
+.lightbox-media{ aspect-ratio: 4/3; position:relative; overflow:hidden; }
+.lightbox-media img.card-photo{ width:100%; height:100%; object-fit:cover; }
+.lightbox-thumbs{
+  display:flex; gap:8px; padding: 14px 34px 0; flex-wrap:wrap;
+}
+.lightbox-thumbs button{
+  width:56px; height:56px; padding:0; border:1px solid var(--line); background:none; overflow:hidden;
+  opacity:.6; transition: opacity var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.lightbox-thumbs button.active,.lightbox-thumbs button:hover{ opacity:1; border-color: var(--accent); }
+.lightbox-thumbs img{ width:100%; height:100%; object-fit:cover; }
 .lightbox-info{ padding: 34px; display:flex; flex-direction:column; gap:14px; }
 .lightbox-info .tag{ font-family: var(--f-mono); font-size:.68rem; color: var(--accent); text-transform:uppercase; }
 .lightbox-info h3{ font-size:1.5rem; margin:0; }
@@ -452,6 +469,10 @@ button{ font-family:inherit; cursor:pointer; }
       Para añadir un nuevo proyecto: duplica un bloque <article class="card">
       y edita data-category, data-title, data-desc, data-client y la clase .ph-N (o reemplaza
       el div.ph-art por un <img>).
+
+      Para un proyecto con VARIAS fotos (como Under Armour más abajo): agrega el atributo
+      data-images con las rutas separadas por coma. La primera imagen se usa como portada
+      de la tarjeta; todas se muestran como galería al abrir el lightbox.
     -->
     <div class="grid" id="portfolioGrid">
 
@@ -464,9 +485,10 @@ button{ font-family:inherit; cursor:pointer; }
         </div>
       </article>
 
-      <article class="card reveal" data-category="vm" data-title="Under Armour — Material POP" data-desc="Desarrollo de material POP y mobiliario de exhibición para lanzamientos de temporada." data-client="Cliente: Under Armour · Rubro: Retail deportivo">
+      <article class="card reveal" data-category="vm" data-title="Under Armour — Material POP" data-desc="Desarrollo e implementación de material POP, mobiliario de exhibición y ambientación de tienda para distintas campañas y lanzamientos de temporada." data-client="Cliente: Under Armour · Rubro: Retail deportivo" data-images="assets/img/ua-01.jpg,assets/img/ua-05.jpg,assets/img/ua-03.jpg,assets/img/ua-06.jpg,assets/img/ua-08.jpg,assets/img/ua-09.jpg,assets/img/ua-07.jpg,assets/img/ua-04.jpg,assets/img/ua-02.jpg,assets/img/ua-10.jpg">
         <div class="card-media">
-          <div class="ph-art ph-2"><span class="ph-mono mono">PROY. 02</span></div>
+          <img class="card-photo" src="assets/img/ua-01.jpg" alt="Under Armour — implementación de material POP en tienda" loading="lazy">
+          <span class="ph-mono mono">PROY. 02</span>
           <span class="card-tag mono">Retail &amp; VM</span>
           <div class="card-overlay"><h3>Under Armour</h3><p>Material POP y exhibición de temporada</p></div>
           <div class="crosshair"><span class="mono coord">X:—  Y:—</span></div>
@@ -517,7 +539,10 @@ button{ font-family:inherit; cursor:pointer; }
 <div class="lightbox" id="lightbox">
   <div class="lightbox-box">
     <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
-    <div class="lightbox-media" id="lightboxMedia"></div>
+    <div>
+      <div class="lightbox-media" id="lightboxMedia"></div>
+      <div class="lightbox-thumbs" id="lightboxThumbs"></div>
+    </div>
     <div class="lightbox-info">
       <span class="tag mono" id="lightboxTag"></span>
       <h3 id="lightboxTitle"></h3>
@@ -729,21 +754,61 @@ cards.forEach(card => {
 });
 
 /* ============================================================
-   LIGHTBOX
+   LIGHTBOX (con soporte de galería para proyectos con varias fotos)
    ============================================================ */
 const lightbox = document.getElementById('lightbox');
 const lbMedia = document.getElementById('lightboxMedia');
+const lbThumbs = document.getElementById('lightboxThumbs');
 const lbTag = document.getElementById('lightboxTag');
 const lbTitle = document.getElementById('lightboxTitle');
 const lbDesc = document.getElementById('lightboxDesc');
 const lbClient = document.getElementById('lightboxClient');
 const lbClose = document.getElementById('lightboxClose');
 
+function setLightboxImage(src, alt){
+  lbMedia.innerHTML = '';
+  const img = document.createElement('img');
+  img.className = 'card-photo';
+  img.src = src;
+  img.alt = alt;
+  lbMedia.appendChild(img);
+}
+
 function openLightbox(card){
-  const mediaHTML = card.querySelector('.card-media .ph-art').outerHTML;
-  lbMedia.innerHTML = mediaHTML;
+  const imagesAttr = card.dataset.images;
+  const title = card.dataset.title;
+
+  if (imagesAttr){
+    // Proyecto con galería de varias fotos
+    const images = imagesAttr.split(',').map(s => s.trim()).filter(Boolean);
+    setLightboxImage(images[0], title);
+
+    lbThumbs.innerHTML = '';
+    images.forEach((src, i) => {
+      const thumb = document.createElement('button');
+      thumb.type = 'button';
+      thumb.className = i === 0 ? 'active' : '';
+      thumb.setAttribute('aria-label', 'Ver foto ' + (i + 1));
+      const thumbImg = document.createElement('img');
+      thumbImg.src = src;
+      thumbImg.alt = '';
+      thumb.appendChild(thumbImg);
+      thumb.addEventListener('click', () => {
+        setLightboxImage(src, title);
+        lbThumbs.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+      lbThumbs.appendChild(thumb);
+    });
+  } else {
+    // Proyecto sin galería: usa el placeholder o imagen única de la tarjeta
+    lbThumbs.innerHTML = '';
+    const mediaEl = card.querySelector('.card-media .ph-art, .card-media .card-photo');
+    lbMedia.innerHTML = mediaEl ? mediaEl.outerHTML : '';
+  }
+
   lbTag.textContent = card.querySelector('.card-tag').textContent;
-  lbTitle.textContent = card.dataset.title;
+  lbTitle.textContent = title;
   lbDesc.textContent = card.dataset.desc;
   lbClient.textContent = card.dataset.client;
   lightbox.classList.add('open');
