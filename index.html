@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -100,7 +101,8 @@ button{ font-family:inherit; cursor:pointer; }
 }
 .navbar.is-scrolled{ box-shadow: 0 1px 0 var(--line), 0 12px 24px -18px rgba(0,0,0,.25); }
 .nav-inner{ display:flex; align-items:center; justify-content:space-between; height: 72px; }
-.logo{ font-weight: 800; font-size: 1.15rem; letter-spacing:-.01em; display:flex; align-items:baseline; gap:6px; }
+.logo{ font-weight: 800; font-size: 1.15rem; letter-spacing:-.01em; display:flex; align-items:center; gap:6px; }
+.logo img{ height: 30px; width:auto; display:block; }
 .logo .dot{ color: var(--accent); }
 .nav-links{ display:flex; gap: clamp(18px,3vw,40px); align-items:center; }
 .nav-links a{
@@ -222,9 +224,6 @@ button{ font-family:inherit; cursor:pointer; }
   position:relative; aspect-ratio: 4/3; overflow:hidden;
   display:flex; align-items:center; justify-content:center;
 }
-/* Placeholder art — swap for a real <img> when project photography is ready.
-   To add a real image: replace the .ph-art div with
-   <img src="ruta/a/tu/imagen.jpg" alt="Nombre del proyecto"> */
 .ph-art{ width:100%; height:100%; position:relative; transition: transform .7s var(--ease); }
 .card:hover .ph-art{ transform: scale(1.06); }
 .ph-art::before{
@@ -236,7 +235,6 @@ button{ font-family:inherit; cursor:pointer; }
   position:absolute; bottom:10px; right:12px; font-family:var(--f-mono); font-size:.62rem; color:rgba(255,255,255,.75); z-index:2;
 }
 
-/* Real project photography inside a card */
 .card-media img.card-photo{
   width:100%; height:100%; object-fit:cover; object-position:center;
   transition: transform .7s var(--ease);
@@ -256,7 +254,6 @@ button{ font-family:inherit; cursor:pointer; }
 .card-overlay h3{ color:#fff; font-size:1.05rem; margin:0 0 4px; }
 .card-overlay p{ color: rgba(255,255,255,.72); font-size:.82rem; margin:0; }
 
-/* signature: CAD-style coordinate crosshair on hover */
 .crosshair{
   position:absolute; z-index:4; pointer-events:none; opacity:0; transition: opacity .2s ease;
   transform: translate(-50%,-50%);
@@ -270,7 +267,6 @@ button{ font-family:inherit; cursor:pointer; }
   background: rgba(255,255,255,.92); padding:1px 5px; white-space:nowrap;
 }
 
-/* Placeholder gradient palettes per project (kept quiet, technical, not stock-photo-like) */
 .ph-1{ background: linear-gradient(135deg,#e5402c 0%, #b12c1c 100%); }
 .ph-2{ background: linear-gradient(135deg,#1c1b1e 0%, #4a494e 100%); }
 .ph-3{ background: linear-gradient(135deg,#6b6b70 0%, #2c2c30 100%); }
@@ -379,12 +375,6 @@ button{ font-family:inherit; cursor:pointer; }
 .viewer-inner .mono{ font-size:.68rem; color: var(--accent); text-transform:uppercase; display:block; margin-bottom:14px; }
 .viewer-inner h3{ font-size: clamp(1.2rem,2.6vw,1.7rem); margin: 0 0 16px; }
 .viewer-inner p{ color: rgba(255,255,255,.55); font-size:.88rem; max-width:420px; margin: 0 auto 22px; }
-/*
-  Para embeber un visor real de FlipHTML5 / Issuu, reemplaza este bloque .viewer
-  por un <iframe> con la URL entregada por la plataforma, por ejemplo:
-  <iframe src="https://e.issuu.com/embed.html?d=TU-DOSSIER&u=TU-USUARIO"
-          style="width:100%; height:100%; border:0;" allowfullscreen></iframe>
-*/
 
 /* ============================================================
    FOOTER / CONTACT
@@ -427,19 +417,16 @@ button{ font-family:inherit; cursor:pointer; }
 </head>
 <body>
 
-<!-- corner registration marks (blueprint sheet) -->
 <div class="crop crop-tl"></div>
 <div class="crop crop-tr"></div>
 <div class="crop crop-bl"></div>
 <div class="crop crop-br"></div>
 
-<!-- ruler -->
 <div class="ruler"><div class="ruler-track"></div></div>
 
-<!-- ============ NAVBAR ============ -->
 <header class="navbar" id="navbar">
   <div class="wrap nav-inner">
-    <a href="#inicio" class="logo">MC<span class="dot">·</span>Studio</a>
+    <a href="#inicio" class="logo"><img src="assets/logo.png" alt="MC Studio"></a>
     <nav class="nav-links" id="navLinks">
       <a href="#inicio">Inicio</a>
       <a href="#servicios">Servicios</a>
@@ -453,7 +440,6 @@ button{ font-family:inherit; cursor:pointer; }
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
 <section class="hero" id="inicio">
   <div class="wrap hero-inner">
     <span class="eyebrow mono">MC Studio — Diseño Comercial &amp; Retail</span>
@@ -466,7 +452,6 @@ button{ font-family:inherit; cursor:pointer; }
   </div>
 </section>
 
-<!-- ============ MARQUEE ============ -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track" id="marqueeTrack">
     <span>Visual Merchandising <i>✦</i> Retail <i>✦</i> Branding <i>✦</i> Diseño Gráfico <i>✦</i> Redes Sociales <i>✦</i></span>
@@ -474,7 +459,6 @@ button{ font-family:inherit; cursor:pointer; }
   </div>
 </div>
 
-<!-- ============ PORTAFOLIO ============ -->
 <section class="section" id="portafolio">
   <div class="wrap">
     <div class="section-head reveal">
@@ -492,16 +476,6 @@ button{ font-family:inherit; cursor:pointer; }
       <button class="filter-btn" data-filter="rrss">Redes Sociales</button>
     </div>
 
-    <!--
-      GRILLA DE PROYECTOS
-      Para añadir un nuevo proyecto: duplica un bloque <article class="card">
-      y edita data-category, data-title, data-desc, data-client y la clase .ph-N (o reemplaza
-      el div.ph-art por un <img>).
-
-      Para un proyecto con VARIAS fotos (como Under Armour más abajo): agrega el atributo
-      data-images con las rutas separadas por coma. La primera imagen se usa como portada
-      de la tarjeta; todas se muestran como galería al abrir el lightbox.
-    -->
     <div class="grid" id="portfolioGrid">
 
       <article class="card reveal" data-category="vm" data-title="Leidiro y Lineatre — Diseño de vitrinas y visual merchandising" data-desc="Diseño de vitrinas y visual merchandising estacional para dos tiendas de moda femenina, incluyendo ambientación de escaparate, montaje de maniquíes y coordinación de campañas de temporada." data-client="Cliente: Leidiro y Lineatre · Rubro: Retail moda femenina" data-images="assets/leidiro-01.jpg,assets/leidiro-08.jpg,assets/leidiro-02.jpg,assets/leidiro-09.jpg,assets/leidiro-10.jpg,assets/leidiro-11.jpg,assets/leidiro-03.jpg,assets/leidiro-04.jpg,assets/leidiro-05.jpg,assets/leidiro-06.jpg,assets/leidiro-07.jpg,assets/leidiro-12.jpg">
@@ -575,7 +549,6 @@ button{ font-family:inherit; cursor:pointer; }
   </div>
 </section>
 
-<!-- ============ LIGHTBOX ============ -->
 <div class="lightbox" id="lightbox">
   <div class="lightbox-box">
     <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
@@ -594,7 +567,6 @@ button{ font-family:inherit; cursor:pointer; }
   </div>
 </div>
 
-<!-- ============ SERVICIOS ============ -->
 <section class="section" id="servicios">
   <div class="wrap">
     <div class="section-head reveal">
@@ -633,7 +605,6 @@ button{ font-family:inherit; cursor:pointer; }
   </div>
 </section>
 
-<!-- ============ TRAYECTORIA ============ -->
 <section class="section" id="trayectoria">
   <div class="wrap">
     <div class="section-head reveal">
@@ -701,7 +672,6 @@ button{ font-family:inherit; cursor:pointer; }
   </div>
 </section>
 
-<!-- ============ CATÁLOGOS ============ -->
 <section class="section catalogs">
   <div class="wrap">
     <div class="section-head reveal">
@@ -718,7 +688,6 @@ button{ font-family:inherit; cursor:pointer; }
   </div>
 </section>
 
-<!-- ============ FOOTER / CONTACTO ============ -->
 <footer class="footer" id="contacto">
   <div class="wrap">
     <div class="footer-grid">
@@ -767,9 +736,6 @@ button{ font-family:inherit; cursor:pointer; }
 </footer>
 
 <script>
-/* ============================================================
-   NAVBAR: sticky shadow + mobile toggle
-   ============================================================ */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('is-scrolled', window.scrollY > 12);
@@ -786,9 +752,6 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   navToggle.setAttribute('aria-expanded', 'false');
 }));
 
-/* ============================================================
-   RULER: generate tick marks + numbers dynamically
-   ============================================================ */
 (function buildRuler(){
   const track = document.querySelector('.ruler-track');
   const count = Math.ceil(window.innerWidth / 40) + 2;
@@ -801,9 +764,6 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   }
 })();
 
-/* ============================================================
-   SCROLL REVEAL — fade-in / slide-up on entry
-   ============================================================ */
 const revealEls = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -815,9 +775,6 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealEls.forEach(el => io.observe(el));
 
-/* ============================================================
-   PORTFOLIO FILTERS
-   ============================================================ */
 const filterBtns = document.querySelectorAll('.filter-btn');
 const cards = document.querySelectorAll('#portfolioGrid .card');
 filterBtns.forEach(btn => {
@@ -832,9 +789,6 @@ filterBtns.forEach(btn => {
   });
 });
 
-/* ============================================================
-   SIGNATURE MICRO-INTERACTION: CAD coordinate crosshair
-   ============================================================ */
 cards.forEach(card => {
   const media = card.querySelector('.card-media');
   const crosshair = card.querySelector('.crosshair');
@@ -849,9 +803,6 @@ cards.forEach(card => {
   });
 });
 
-/* ============================================================
-   LIGHTBOX (con soporte de galería para proyectos con varias fotos)
-   ============================================================ */
 const lightbox = document.getElementById('lightbox');
 const lbMedia = document.getElementById('lightboxMedia');
 const lbThumbs = document.getElementById('lightboxThumbs');
@@ -875,7 +826,6 @@ function openLightbox(card){
   const title = card.dataset.title;
 
   if (imagesAttr){
-    // Proyecto con galería de varias fotos
     const images = imagesAttr.split(',').map(s => s.trim()).filter(Boolean);
     setLightboxImage(images[0], title);
 
@@ -897,7 +847,6 @@ function openLightbox(card){
       lbThumbs.appendChild(thumb);
     });
   } else {
-    // Proyecto sin galería: usa el placeholder o imagen única de la tarjeta
     lbThumbs.innerHTML = '';
     const mediaEl = card.querySelector('.card-media .ph-art, .card-media .card-photo');
     lbMedia.innerHTML = mediaEl ? mediaEl.outerHTML : '';
@@ -919,10 +868,6 @@ lbClose.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
-/* ============================================================
-   CONTACT FORM — client-side only (conecta a tu backend / servicio
-   de email preferido, ej. Formspree, EmailJS, etc.)
-   ============================================================ */
 const form = document.getElementById('contactForm');
 const formMsg = document.getElementById('formMsg');
 form.addEventListener('submit', (e) => {
@@ -935,7 +880,6 @@ form.addEventListener('submit', (e) => {
   form.reset();
 });
 
-/* year */
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
