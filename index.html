@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,17 +14,16 @@
 /* ============================================================
    MC STUDIO — DESIGN TOKENS
    Estética: hoja técnica de dibujo (blueprint / CAD)
-   Referencia directa al background de Matías en AutoCAD/SketchUp.
    ============================================================ */
 :root{
-  --ink:        #0a0a0a;   /* negro casi puro */
-  --paper:      #faf9f6;   /* blanco impecable */
-  --anthracite: #1c1b1e;   /* fondo de contraste oscuro */
-  --graphite:   #6b6b70;   /* texto secundario */
-  --line:       #dedcd6;   /* hairline sobre claro */
-  --line-dark:  #38373a;   /* hairline sobre oscuro */
-  --accent:     #e5402c;   /* rojo técnico / línea de corrección */
-  --accent-dim: rgba(229,64,44,.10);
+  --ink:         #0a0a0a;
+  --paper:       #faf9f6;
+  --anthracite:  #1c1b1e;
+  --graphite:    #6b6b70;
+  --line:        #dedcd6;
+  --line-dark:   #38373a;
+  --accent:      #e5402c;
+  --accent-dim:  rgba(229,64,44,.10);
 
   --f-display: 'Montserrat', sans-serif;
   --f-mono:    'Space Mono', monospace;
@@ -61,7 +59,7 @@ button{ font-family:inherit; cursor:pointer; }
 .wrap{ max-width: var(--maxw); margin:0 auto; padding-inline: var(--gutter); }
 .mono{ font-family: var(--f-mono); letter-spacing:.04em; }
 
-/* ---------- registration marks (fixed corner crops, blueprint sheet) ---------- */
+/* Marks */
 .crop{
   position: fixed; width: 22px; height: 22px; z-index: 300; pointer-events:none;
   border-color: var(--ink); opacity:.35;
@@ -75,7 +73,7 @@ button{ font-family:inherit; cursor:pointer; }
 .crop-br{ bottom:14px; right:14px; }
 @media (max-width: 640px){ .crop{ display:none; } }
 
-/* ---------- top ruler strip ---------- */
+/* Ruler */
 .ruler{
   position: relative; height: 26px; overflow:hidden;
   background: var(--paper); border-bottom: 1px solid var(--line);
@@ -84,13 +82,8 @@ button{ font-family:inherit; cursor:pointer; }
   display:flex; align-items:flex-end; height:100%;
   background-image: repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 40px);
 }
-.ruler-label{
-  font-size: 9px; color: var(--graphite); padding: 4px 0 0 6px; white-space:nowrap;
-}
 
-/* ============================================================
-   NAVBAR
-   ============================================================ */
+/* NAVBAR */
 .navbar{
   position: sticky; top:0; z-index: 200;
   background: rgba(250,249,246,.72);
@@ -103,7 +96,6 @@ button{ font-family:inherit; cursor:pointer; }
 .nav-inner{ display:flex; align-items:center; justify-content:space-between; height: 72px; }
 .logo{ font-weight: 800; font-size: 1.15rem; letter-spacing:-.01em; display:flex; align-items:center; gap:6px; }
 .logo img{ height: 30px; width:auto; display:block; }
-.logo .dot{ color: var(--accent); }
 .nav-links{ display:flex; gap: clamp(18px,3vw,40px); align-items:center; }
 .nav-links a{
   font-size:.82rem; font-weight:600; text-transform:uppercase; letter-spacing:.06em;
@@ -134,32 +126,56 @@ button{ font-family:inherit; cursor:pointer; }
 }
 
 /* ============================================================
-   HERO
+   NUEVO HERO SPLIT & SLIDER
    ============================================================ */
-.hero{
-  position:relative; padding: clamp(64px,12vw,140px) 0 clamp(48px,8vw,90px);
+.hero {
+  position: relative;
+  padding: clamp(40px, 6vw, 80px) 0;
   background-image:
     linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
   background-size: 44px 44px;
-  background-position: center top;
-  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
-          mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  border-bottom: 1px solid var(--line);
 }
-.hero-inner{ text-align:center; max-width: 880px; margin:0 auto; position:relative; z-index:2; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(30px, 5vw, 60px);
+  align-items: center;
+}
+
+.hero-info {
+  text-align: left;
+}
+
 .eyebrow{
   display:inline-flex; align-items:center; gap:8px; font-size:.72rem; font-weight:700;
   color: var(--accent); text-transform:uppercase; margin-bottom: 22px;
 }
 .eyebrow::before{ content:""; width:26px; height:1px; background: var(--accent); }
-.hero h1{
-  font-size: clamp(2.3rem, 6.4vw, 4.6rem); font-weight:800; line-height:1.04; letter-spacing:-.02em; margin: 0 0 22px;
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.02em;
+  margin: 0 0 20px;
 }
-.hero h1 em{ font-style:normal; color: var(--accent); }
-.hero p{
-  font-size: clamp(1rem, 1.6vw, 1.2rem); color: var(--graphite); max-width: 560px; margin: 0 auto 38px;
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--accent);
 }
-.cta-row{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+
+.hero p {
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  color: var(--graphite);
+  margin: 0 0 32px;
+  max-width: 500px;
+}
+
+.cta-row{ display:flex; gap:16px; flex-wrap:wrap; }
 .btn{
   padding: 15px 30px; font-size:.82rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
   transition: transform var(--dur) var(--ease), background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
@@ -170,12 +186,107 @@ button{ font-family:inherit; cursor:pointer; }
 .btn-outline{ background:transparent; color: var(--ink); border:1px solid var(--ink); }
 .btn-outline:hover{ background: var(--ink); color:#fff; transform: translateY(-2px); }
 
-/* ============================================================
-   MARQUEE
-   ============================================================ */
+/* Slider / Carousel */
+.hero-slider-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border: 1px solid var(--ink);
+  overflow: hidden;
+  background: var(--anthracite);
+  box-shadow: 12px 12px 0px var(--line-dark);
+}
+
+.hero-slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s var(--ease);
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  inset-inline: 0;
+  padding: 20px;
+  background: linear-gradient(0deg, rgba(10,10,10,0.92) 0%, transparent 100%);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.slide-caption h4 {
+  margin: 0 0 2px;
+  font-size: 1.05rem;
+}
+
+.slide-caption span {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  background: rgba(0,0,0,0.5);
+  padding: 2px 8px;
+  border: 1px solid var(--line-dark);
+}
+
+.slider-dots {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.dot-btn {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dot-btn.active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+
+@media (max-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-info {
+    text-align: center;
+  }
+  .hero p {
+    margin-inline: auto;
+  }
+  .cta-row {
+    justify-content: center;
+  }
+}
+
+/* MARQUEE */
 .marquee{
   background: var(--ink); color: var(--paper); overflow:hidden; padding: 18px 0;
-  border-top:1px solid var(--line-dark); border-bottom:1px solid var(--line-dark);
+  border-bottom:1px solid var(--line-dark);
 }
 .marquee-track{ display:flex; width: max-content; animation: scroll 26s linear infinite; }
 .marquee-track span{
@@ -184,235 +295,6 @@ button{ font-family:inherit; cursor:pointer; }
 }
 .marquee-track span i{ color: var(--accent); font-style:normal; }
 @keyframes scroll{ from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
-
-/* ============================================================
-   SECTION HEADERS (shared)
-   ============================================================ */
-.section{ padding: clamp(64px,10vw,110px) 0; }
-.section-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom: 48px; flex-wrap:wrap; }
-.section-tag{ font-size:.72rem; color: var(--accent); font-weight:700; text-transform:uppercase; margin-bottom:10px; display:block; }
-.section-head h2{ font-size: clamp(1.7rem,3.4vw,2.5rem); font-weight:800; letter-spacing:-.015em; margin:0; }
-.section-head p{ color: var(--graphite); max-width: 380px; margin:0; font-size:.95rem; }
-
-.reveal{ opacity:0; transform: translateY(28px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-.reveal.is-visible{ opacity:1; transform: translateY(0); }
-
-/* ============================================================
-   PORTFOLIO
-   ============================================================ */
-.filters{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom: 36px; }
-.filter-btn{
-  border:1px solid var(--line); background:transparent; padding: 9px 20px; font-size:.75rem;
-  font-weight:700; text-transform:uppercase; letter-spacing:.05em; border-radius: 100px;
-  transition: all var(--dur) var(--ease);
-}
-.filter-btn:hover{ border-color: var(--ink); }
-.filter-btn.active{ background: var(--ink); color:#fff; border-color: var(--ink); }
-
-.grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
-@media (max-width: 940px){ .grid{ grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 620px){ .grid{ grid-template-columns: 1fr; } }
-
-.card{
-  position:relative; border:1px solid var(--line); background:#fff; overflow:hidden;
-  cursor:pointer; transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
-}
-.card:hover{ border-color: var(--ink); box-shadow: 0 22px 44px -28px rgba(0,0,0,.35); }
-.card.is-hidden{ display:none; }
-
-.card-media{
-  position:relative; aspect-ratio: 4/3; overflow:hidden;
-  display:flex; align-items:center; justify-content:center;
-}
-.ph-art{ width:100%; height:100%; position:relative; transition: transform .7s var(--ease); }
-.card:hover .ph-art{ transform: scale(1.06); }
-.ph-art::before{
-  content:""; position:absolute; inset:0;
-  background-image: linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px);
-  background-size: 22px 22px;
-}
-.ph-mono{
-  position:absolute; bottom:10px; right:12px; font-family:var(--f-mono); font-size:.62rem; color:rgba(255,255,255,.75); z-index:2;
-}
-
-.card-media img.card-photo{
-  width:100%; height:100%; object-fit:cover; object-position:center;
-  transition: transform .7s var(--ease);
-}
-.card:hover .card-photo{ transform: scale(1.06); }
-
-.card-tag{
-  position:absolute; top:14px; left:14px; z-index:3; background: rgba(10,10,10,.82); color:#fff;
-  font-family: var(--f-mono); font-size:.65rem; padding: 5px 10px; text-transform:uppercase; letter-spacing:.05em;
-}
-.card-overlay{
-  position:absolute; inset:0; z-index:2; display:flex; flex-direction:column; justify-content:flex-end; padding: 20px;
-  background: linear-gradient(180deg, rgba(10,10,10,0) 40%, rgba(10,10,10,.92) 100%);
-  opacity:0; transform: translateY(10px); transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
-}
-.card:hover .card-overlay{ opacity:1; transform: translateY(0); }
-.card-overlay h3{ color:#fff; font-size:1.05rem; margin:0 0 4px; }
-.card-overlay p{ color: rgba(255,255,255,.72); font-size:.82rem; margin:0; }
-
-.crosshair{
-  position:absolute; z-index:4; pointer-events:none; opacity:0; transition: opacity .2s ease;
-  transform: translate(-50%,-50%);
-}
-.card:hover .crosshair{ opacity:1; }
-.crosshair::before,.crosshair::after{ content:""; position:absolute; background: var(--accent); }
-.crosshair::before{ width:16px; height:1px; top:50%; left:-8px; }
-.crosshair::after{ width:1px; height:16px; left:50%; top:-8px; }
-.crosshair span{
-  position:absolute; top:10px; left:10px; font-family: var(--f-mono); font-size:.6rem; color: var(--accent);
-  background: rgba(255,255,255,.92); padding:1px 5px; white-space:nowrap;
-}
-
-.ph-1{ background: linear-gradient(135deg,#e5402c 0%, #b12c1c 100%); }
-.ph-2{ background: linear-gradient(135deg,#1c1b1e 0%, #4a494e 100%); }
-.ph-3{ background: linear-gradient(135deg,#6b6b70 0%, #2c2c30 100%); }
-.ph-4{ background: linear-gradient(135deg,#e5402c 0%, #1c1b1e 100%); }
-.ph-5{ background: linear-gradient(135deg,#38373a 0%, #0a0a0a 100%); }
-.ph-6{ background: linear-gradient(135deg,#9a9a9e 0%, #38373a 100%); }
-
-/* ============================================================
-   LIGHTBOX
-   ============================================================ */
-.lightbox{
-  position:fixed; inset:0; z-index:500; background: rgba(10,10,10,.94);
-  display:flex; align-items:center; justify-content:center; padding: 32px;
-  opacity:0; visibility:hidden; transition: opacity var(--dur) var(--ease);
-}
-.lightbox.open{ opacity:1; visibility:visible; }
-.lightbox-box{
-  background:#fff; max-width: 920px; width:100%; max-height: 88vh; overflow:auto;
-  display:grid; grid-template-columns: 1.1fr 1fr;
-  transform: translateY(24px); transition: transform var(--dur) var(--ease);
-}
-.lightbox.open .lightbox-box{ transform: translateY(0); }
-@media (max-width: 760px){ .lightbox-box{ grid-template-columns: 1fr; } }
-.lightbox-media{ aspect-ratio: 4/3; position:relative; overflow:hidden; background: var(--anthracite); display:flex; align-items:center; justify-content:center; }
-.lightbox-media img.card-photo{ width:100%; height:100%; object-fit:contain; }
-.lightbox-thumbs{
-  display:flex; gap:8px; padding: 14px 34px 0; flex-wrap:wrap;
-}
-.lightbox-thumbs button{
-  width:56px; height:56px; padding:0; border:1px solid var(--line); background:none; overflow:hidden;
-  opacity:.6; transition: opacity var(--dur) var(--ease), border-color var(--dur) var(--ease);
-}
-.lightbox-thumbs button.active,.lightbox-thumbs button:hover{ opacity:1; border-color: var(--accent); }
-.lightbox-thumbs img{ width:100%; height:100%; object-fit:cover; }
-.lightbox-info{ padding: 34px; display:flex; flex-direction:column; gap:14px; }
-.lightbox-info .tag{ font-family: var(--f-mono); font-size:.68rem; color: var(--accent); text-transform:uppercase; }
-.lightbox-info h3{ font-size:1.5rem; margin:0; }
-.lightbox-info dl{ display:grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size:.85rem; margin: 6px 0; }
-.lightbox-info dt{ color: var(--graphite); text-transform:uppercase; font-size:.68rem; letter-spacing:.05em; align-self:center; }
-.lightbox-info dd{ margin:0; }
-.lightbox-info p.desc{ color: var(--graphite); font-size:.92rem; line-height:1.6; }
-.lightbox-close{
-  position:absolute; top:20px; right:20px; z-index:10; width:40px; height:40px; border-radius:50%;
-  background: #fff; border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
-  font-size:1.1rem; transition: transform var(--dur) var(--ease);
-}
-.lightbox-close:hover{ transform: rotate(90deg); }
-
-/* ============================================================
-   SERVICES
-   ============================================================ */
-.services-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border:1px solid var(--line); }
-@media (max-width: 940px){ .services-grid{ grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 560px){ .services-grid{ grid-template-columns: 1fr; } }
-.service-card{ background:#fff; padding: 36px 30px; transition: background var(--dur) var(--ease); }
-.service-card:hover{ background: var(--accent-dim); }
-.service-icon{ width:40px; height:40px; margin-bottom: 22px; color: var(--accent); }
-.service-icon svg{ width:100%; height:100%; }
-.service-card h3{ font-size: 1.02rem; margin: 0 0 10px; letter-spacing:-.01em; }
-.service-card p{ font-size:.85rem; color: var(--graphite); margin:0; line-height:1.6; }
-
-/* ============================================================
-   TRAYECTORIA
-   ============================================================ */
-.about-grid{ display:grid; grid-template-columns: 1fr 1.3fr; gap: 56px; align-items:start; }
-@media (max-width: 860px){ .about-grid{ grid-template-columns: 1fr; gap: 40px; } }
-.about-lede{ font-size: 1.05rem; color: var(--graphite); line-height:1.7; }
-.about-lede strong{ color: var(--ink); }
-
-.skills-block{ margin-top: 30px; }
-.skills-block h4{ font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color: var(--accent); margin: 0 0 12px; }
-.skills-tags{ display:flex; flex-wrap:wrap; gap:8px; margin: 0 0 26px; }
-.skills-tags span{
-  border:1px solid var(--line); padding: 6px 12px; font-size:.75rem; font-family: var(--f-mono);
-  color: var(--graphite);
-}
-
-.timeline{ list-style:none; margin:0; padding:0; border-left: 1px solid var(--line); }
-.timeline li{ position:relative; padding: 0 0 26px 26px; }
-.timeline li:last-child{ padding-bottom:0; }
-.timeline li::before{
-  content:""; position:absolute; left:-5px; top:4px; width:9px; height:9px; border-radius:50%;
-  background: var(--paper); border:2px solid var(--accent);
-}
-.timeline .years{ font-family: var(--f-mono); font-size:.68rem; color: var(--accent); text-transform:uppercase; display:block; margin-bottom:4px; }
-.timeline h4{ font-size:1rem; margin: 0 0 4px; letter-spacing:-.01em; }
-.timeline p{ font-size:.85rem; color: var(--graphite); margin:0; line-height:1.55; }
-
-/* ============================================================
-   CATALOGS
-   ============================================================ */
-.catalogs{ background: var(--anthracite); color: #fff; }
-.catalogs .section-tag{ color: var(--accent); }
-.catalogs .section-head h2{ color:#fff; }
-.catalogs .section-head p{ color: rgba(255,255,255,.55); }
-.viewer{
-  border:1px solid var(--line-dark); background: #111; aspect-ratio: 16/8; position:relative; overflow:hidden;
-  display:flex; align-items:center; justify-content:center; text-align:center;
-}
-.viewer::before{
-  content:""; position:absolute; inset:0;
-  background-image: linear-gradient(var(--line-dark) 1px, transparent 1px), linear-gradient(90deg, var(--line-dark) 1px, transparent 1px);
-  background-size: 30px 30px; opacity:.5;
-}
-.viewer-inner{ position:relative; z-index:2; padding: 20px; }
-.viewer-inner .mono{ font-size:.68rem; color: var(--accent); text-transform:uppercase; display:block; margin-bottom:14px; }
-.viewer-inner h3{ font-size: clamp(1.2rem,2.6vw,1.7rem); margin: 0 0 16px; }
-.viewer-inner p{ color: rgba(255,255,255,.55); font-size:.88rem; max-width:420px; margin: 0 auto 22px; }
-
-/* ============================================================
-   FOOTER / CONTACT
-   ============================================================ */
-.footer{ background: var(--ink); color: #fff; padding: clamp(60px,9vw,100px) 0 30px; }
-.footer-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px; }
-@media (max-width: 820px){ .footer-grid{ grid-template-columns: 1fr; gap: 48px; } }
-
-.footer h2{ font-size: clamp(1.6rem,3vw,2.2rem); font-weight:800; letter-spacing:-.01em; margin: 0 0 30px; }
-
-.field{ margin-bottom: 18px; }
-.field label{ display:block; font-family: var(--f-mono); font-size:.68rem; text-transform:uppercase; color: rgba(255,255,255,.5); margin-bottom:8px; }
-.field input, .field textarea{
-  width:100%; background:transparent; border:none; border-bottom: 1px solid var(--line-dark); color:#fff;
-  font-family: inherit; font-size: .95rem; padding: 10px 2px; transition: border-color var(--dur) var(--ease);
-}
-.field input:focus, .field textarea:focus{ border-color: var(--accent); outline:none; }
-.field textarea{ resize: vertical; min-height: 90px; }
-.form-msg{ font-size:.8rem; color: var(--accent); min-height: 18px; margin-top:6px; }
-
-.contact-list{ list-style:none; padding:0; margin: 0 0 34px; display:flex; flex-direction:column; gap: 16px; }
-.contact-list a, .contact-list span{ font-size:1rem; }
-.contact-list .label{ display:block; font-family: var(--f-mono); font-size:.68rem; text-transform:uppercase; color: rgba(255,255,255,.5); margin-bottom:3px; }
-.contact-list a:hover{ color: var(--accent); }
-
-.social-row{ display:flex; gap:14px; }
-.social-row a{
-  width:42px; height:42px; border:1px solid var(--line-dark); border-radius:50%;
-  display:flex; align-items:center; justify-content:center; transition: all var(--dur) var(--ease);
-}
-.social-row a:hover{ border-color: var(--accent); background: var(--accent); }
-.social-row svg{ width:18px; height:18px; }
-
-.footer-bottom{
-  border-top: 1px solid var(--line-dark); padding-top: 26px; display:flex; justify-content:space-between;
-  align-items:center; flex-wrap:wrap; gap:12px; font-size:.75rem; color: rgba(255,255,255,.45);
-}
-.footer-bottom .mono{ font-size:.7rem; }
 </style>
 </head>
 <body>
@@ -440,468 +322,125 @@ button{ font-family:inherit; cursor:pointer; }
   </div>
 </header>
 
+<!-- SECCIÓN ENTRADA (HERO SPLIT + CARROUSEL) -->
 <section class="hero" id="inicio">
-  <div class="wrap hero-inner">
-    <span class="eyebrow mono">MC Studio — Diseño Comercial &amp; Retail</span>
-    <h1>Diseño que convierte <em>vitrinas</em> en ventas.</h1>
-    <p>Estudio integral de Visual Merchandising y Branding liderado por Matías Cortés. Potenciamos la experiencia de compra en el punto de venta y en el entorno digital.</p>
-    <div class="cta-row">
-      <a href="#portafolio" class="btn btn-primary">Ver Proyectos</a>
-      <a href="#contacto" class="btn btn-outline">Contactar</a>
+  <div class="wrap hero-grid">
+    
+    <div class="hero-info">
+      <span class="eyebrow mono">MC Studio — Estrategia Visual &amp; Retail</span>
+      <h1>Diseño de alto impacto para <em>marcas</em> y espacios comerciales.</h1>
+      <p>Transformamos la presencia de tu negocio en el punto de venta y entorno digital con Visual Merchandising, identidad de marca y comunicación gráfica estratégica.</p>
+      <div class="cta-row">
+        <a href="#portafolio" class="btn btn-primary">Ver Proyectos</a>
+        <a href="#contacto" class="btn btn-outline">Contactar</a>
+      </div>
     </div>
+
+    <div class="hero-slider-container">
+      <div class="slider-dots" id="heroDots"></div>
+      <div class="hero-slider" id="heroSlider">
+        
+        <div class="slide">
+          <img src="assets/leidiro-01.jpg" alt="Leidiro y Lineatre">
+          <div class="slide-caption">
+            <div>
+              <h4>Leidiro &amp; Lineatre</h4>
+              <p style="font-size: 0.78rem; margin:0; color: #ccc;">Diseño de vitrinas y montaje VM</p>
+            </div>
+            <span>RETAIL &amp; VM</span>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="assets/ua-01.jpg" alt="Under Armour">
+          <div class="slide-caption">
+            <div>
+              <h4>Under Armour</h4>
+              <p style="font-size: 0.78rem; margin:0; color: #ccc;">Material POP y exhibición de tienda</p>
+            </div>
+            <span>RETAIL &amp; VM</span>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="assets/sistek-post-01-cover.jpg" alt="Sistek">
+          <div class="slide-caption">
+            <div>
+              <h4>Sistek &amp; Ubiquiti</h4>
+              <p style="font-size: 0.78rem; margin:0; color: #ccc;">Banners web y piezas digitales</p>
+            </div>
+            <span>DISEÑO GRÁFICO</span>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="assets/fuenzalida-01.jpg" alt="Fuenzalida Inmobiliaria">
+          <div class="slide-caption">
+            <div>
+              <h4>Fuenzalida Inmobiliaria</h4>
+              <p style="font-size: 0.78rem; margin:0; color: #ccc;">Branding e identidad corporativa</p>
+            </div>
+            <span>BRANDING</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
 <div class="marquee" aria-hidden="true">
-  <div class="marquee-track" id="marqueeTrack">
+  <div class="marquee-track">
     <span>Visual Merchandising <i>✦</i> Retail <i>✦</i> Branding <i>✦</i> Diseño Gráfico <i>✦</i> Redes Sociales <i>✦</i></span>
     <span>Visual Merchandising <i>✦</i> Retail <i>✦</i> Branding <i>✦</i> Diseño Gráfico <i>✦</i> Redes Sociales <i>✦</i></span>
   </div>
 </div>
-
-<section class="section" id="portafolio">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <span class="section-tag mono">// Portafolio</span>
-        <h2>Trabajos seleccionados</h2>
-      </div>
-      <p>Una muestra de proyectos en retail, branding y comunicación digital para marcas nacionales e internacionales.</p>
-    </div>
-
-    <div class="filters reveal">
-      <button class="filter-btn active" data-filter="todos">Todos</button>
-      <button class="filter-btn" data-filter="vm">Retail &amp; VM</button>
-      <button class="filter-btn" data-filter="grafico">Diseño Gráfico</button>
-      <button class="filter-btn" data-filter="rrss">Redes Sociales</button>
-    </div>
-
-    <div class="grid" id="portfolioGrid">
-
-      <article class="card reveal" data-category="vm" data-title="Leidiro y Lineatre — Diseño de vitrinas y visual merchandising" data-desc="Diseño de vitrinas y visual merchandising estacional para dos tiendas de moda femenina, incluyendo ambientación de escaparate, montaje de maniquíes y coordinación de campañas de temporada." data-client="Cliente: Leidiro y Lineatre · Rubro: Retail moda femenina" data-images="assets/leidiro-01.jpg,assets/leidiro-08.jpg,assets/leidiro-02.jpg,assets/leidiro-09.jpg,assets/leidiro-10.jpg,assets/leidiro-11.jpg,assets/leidiro-03.jpg,assets/leidiro-04.jpg,assets/leidiro-05.jpg,assets/leidiro-06.jpg,assets/leidiro-07.jpg,assets/leidiro-12.jpg">
-        <div class="card-media">
-          <img class="card-photo" src="assets/leidiro-01.jpg" alt="Leidiro y Lineatre — vitrina de temporada" loading="lazy">
-          <span class="ph-mono mono">PROY. 01</span>
-          <span class="card-tag mono">Retail &amp; VM</span>
-          <div class="card-overlay"><h3>Leidiro y Lineatre</h3><p>Diseño de vitrinas y visual merchandising</p></div>
-          <div class="crosshair"><span class="mono coord">X:—  Y:—</span></div>
-        </div>
-      </article>
-
-      <article class="card reveal" data-category="vm" data-title="Under Armour — Material POP" data-desc="Desarrollo e implementación de material POP, mobiliario de exhibición y ambientación de tienda para distintas campañas y lanzamientos de temporada." data-client="Cliente: Under Armour · Rubro: Retail deportivo" data-images="assets/ua-01.jpg,assets/ua-05.jpg,assets/ua-03.jpg,assets/ua-06.jpg,assets/ua-08.jpg,assets/ua-09.jpg,assets/ua-07.jpg,assets/ua-04.jpg,assets/ua-02.jpg,assets/ua-10.jpg">
-        <div class="card-media">
-          <img class="card-photo" src="assets/ua-01.jpg" alt="Under Armour — implementación de material POP en tienda" loading="lazy">
-          <span class="ph-mono mono">PROY. 02</span>
-          <span class="card-tag mono">Retail &amp; VM</span>
-          <div class="card-overlay"><h3>Under Armour</h3><p>Material POP y exhibición de temporada</p></div>
-          <div class="crosshair"><span class="mono coord">X:—  Y:—</span></div>
-        </div>
-      </article>
-
-      <article class="card reveal" data-category="grafico" data-title="Sistek — Diseño de banners web y posts para redes sociales" data-desc="Diseño de banners promocionales para el sitio web y posts para Instagram, en alianza con Ubiquiti: lanzamientos de productos UniFi (switching, WiFi 7, Cloud Gateway), con foco en piezas de producto y beneficios técnicos." data-client="Cliente: Sistek · Rubro: Tecnología" data-images="assets/sistek-post-01.jpg,assets/sistek-post-02.jpg,assets/sistek-banner-01.jpg,assets/sistek-banner-02.jpg,assets/sistek-banner-03.jpg,assets/sistek-banner-04.jpg">
-        <div class="card-media">
-          <img class="card-photo" src="assets/sistek-post-01-cover.jpg" alt="Sistek — banner UniFi WiFi 7" loading="lazy">
-          <span class="ph-mono mono">PROY. 03</span>
-          <span class="card-tag mono">Diseño Gráfico</span>
-          <div class="card-overlay"><h3>Sistek</h3><p>Banners web y posts para redes</p></div>
-          <div class="crosshair"><span class="mono coord">X:—  Y:—</span></div>
-        </div>
-      </article>
-
-      <article class="card reveal" data-category="grafico" data-title="Fuenzalida Gestión Inmobiliaria — Identidad y comunicación digital" data-desc="Diseño de logotipo, tarjetas de presentación y piezas gráficas para redes sociales de una inmobiliaria en República Dominicana. Incluye desarrollo de marca (versión positiva y negativa del isotipo), papelería corporativa y posts promocionales." data-client="Cliente: Fuenzalida Gestión Inmobiliaria · Rubro: Inmobiliario" data-images="assets/fuenzalida-01.jpg,assets/fuenzalida-05.jpg,assets/fuenzalida-02.jpg,assets/fuenzalida-03.jpg,assets/fuenzalida-04.jpg">
-        <div class="card-media">
-          <img class="card-photo" src="assets/fuenzalida-01.jpg" alt="Fuenzalida Gestión Inmobiliaria — post redes sociales" loading="lazy">
-          <span class="ph-mono mono">PROY. 09</span>
-          <span class="card-tag mono">Diseño Gráfico</span>
-          <div class="card-overlay"><h3>Fuenzalida Inmobiliaria</h3><p>Logotipo, tarjetas y redes sociales</p></div>
-          <div class="crosshair"><span class="mono coord">X:—  Y:—</span></div>
-        </div>
-      </article>
-
-      <article class="card reveal" data-category="vm" data-title="Gotta — Diseño de vitrina y visual merchandising" data-desc="Diseño y montaje de vitrinas de temporada y ambientación interior de tienda: distribución de calzado por línea, señalética de promociones, exhibidores y decoración estacional (Navidad, primavera)." data-client="Cliente: Gotta · Rubro: Retail calzado" data-images="assets/gotta-01.jpg,assets/gotta-02.jpg,assets/gotta-03.jpg,assets/gotta-04.jpg,assets/gotta-05.jpg,assets/gotta-06.jpg">
-        <div class="card-media">
-          <img class="card-photo" src="assets/gotta-01.jpg" alt="Gotta — vitrina de tienda" loading="lazy">
-          <span class="ph-mono mono">PROY. 08</span>
-          <span class="card-tag mono">Retail &amp; VM</span>
-          <div class="card-overlay"><h3>Gotta</h3><p>Vitrina y visual merchandising</p></div>
-          <div class="crosshair"><span class="mono coord">X:—  Y:—</span></div>
-        </div>
-      </article>
-
-      <article class="card reveal" data-category="vm" data-title="Bata — Ejecución en terreno" data-desc="Supervisión y share of shelf en cadena de tiendas a nivel nacional: montaje de exhibidores, ambientación de sección escolar y ordenamiento de mobiliario de punto de venta." data-client="Cliente: Bata · Rubro: Retail calzado" data-images="assets/bata-01.jpg,assets/bata-03.jpg,assets/bata-04.jpg,assets/bata-02.jpg,assets/bata-05.jpg">
-        <div class="card-media">
-          <img class="card-photo" src="assets/bata-01.jpg" alt="Bata — supervisión y exhibidores en tienda" loading="lazy">
-          <span class="ph-mono mono">PROY. 04</span>
-          <span class="card-tag mono">Retail &amp; VM</span>
-          <div class="card-overlay"><h3>Bata</h3><p>Ejecución en terreno y share of shelf</p></div>
-          <div class="crosshair"><span class="mono coord">X:—  Y:—</span></div>
-        </div>
-      </article>
-
-      <article class="card reveal" data-category="grafico" data-title="Gotta — Piezas editoriales" data-desc="Diseño editorial y piezas publicitarias para campañas de temporada." data-client="Cliente: Gotta · Rubro: Retail">
-        <div class="card-media">
-          <div class="ph-art ph-5"><span class="ph-mono mono">PROY. 05</span></div>
-          <span class="card-tag mono">Diseño Gráfico</span>
-          <div class="card-overlay"><h3>Gotta</h3><p>Piezas editoriales y publicitarias</p></div>
-          <div class="crosshair"><span class="mono coord">X:—  Y:—</span></div>
-        </div>
-      </article>
-
-      <article class="card reveal" data-category="rrss" data-title="GEO Marketing — Contenido RRSS" data-desc="Diseño de piezas gráficas para redes sociales: carruseles educativos, historias de Instagram, tabla de planes y precios, y contenido de marca con enfoque en geomarketing y estrategia digital para Pymes." data-client="Cliente: GEO Marketing · Rubro: Agencia">
-        <div class="card-media">
-          <div class="ph-art ph-6"><span class="ph-mono mono">PROY. 06</span></div>
-          <span class="card-tag mono">Redes Sociales</span>
-          <div class="card-overlay"><h3>GEO Marketing</h3><p>Contenido y estrategia para redes</p></div>
-          <div class="crosshair"><span class="mono coord">X:—  Y:—</span></div>
-        </div>
-      </article>
-
-      <article class="card reveal" data-category="vm" data-title="Everlast &amp; Zoo York — Corners de Visual Merchandising" data-desc="Diseño y montaje de corners de marca en tienda multimarca: mobiliario, señalética y ambientación para Everlast y Zoo York." data-client="Cliente: Everlast · Zoo York · Rubro: Retail moda urbana" data-images="assets/ez-04.jpg,assets/ez-01.jpg,assets/ez-02.jpg,assets/ez-05.jpg,assets/ez-06.jpg,assets/ez-03.jpg">
-        <div class="card-media">
-          <img class="card-photo" src="assets/ez-04.jpg" alt="Everlast y Zoo York — corners de visual merchandising" loading="lazy">
-          <span class="ph-mono mono">PROY. 07</span>
-          <span class="card-tag mono">Retail &amp; VM</span>
-          <div class="card-overlay"><h3>Everlast &amp; Zoo York</h3><p>Corners de visual merchandising</p></div>
-          <div class="crosshair"><span class="mono coord">X:—  Y:—</span></div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<div class="lightbox" id="lightbox">
-  <div class="lightbox-box">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
-    <div>
-      <div class="lightbox-media" id="lightboxMedia"></div>
-      <div class="lightbox-thumbs" id="lightboxThumbs"></div>
-    </div>
-    <div class="lightbox-info">
-      <span class="tag mono" id="lightboxTag"></span>
-      <h3 id="lightboxTitle"></h3>
-      <p class="desc" id="lightboxDesc"></p>
-      <dl>
-        <dt>Detalle</dt><dd id="lightboxClient"></dd>
-      </dl>
-    </div>
-  </div>
-</div>
-
-<section class="section" id="servicios">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <span class="section-tag mono">// Servicios</span>
-        <h2>Qué hacemos</h2>
-      </div>
-      <p>Cuatro disciplinas conectadas: del punto de venta físico a la comunicación digital.</p>
-    </div>
-  </div>
-
-  <div class="wrap">
-    <div class="services-grid reveal">
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="14" width="28" height="20" /><path d="M6 14 10 6h20l4 8" /><path d="M14 34v-8h12v8" /></svg>
-        </div>
-        <h3>Visual Merchandising &amp; Retail</h3>
-        <p>Diseño y exhibición del punto de venta —vitrinas, mobiliario y material POP— que dirige la mirada del cliente y activa la compra.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="16" r="10"/><circle cx="24" cy="24" r="10"/></svg>
-        </div>
-        <h3>Branding &amp; Diseño Gráfico</h3>
-        <p>Construcción de identidad de marca a través de logotipos, piezas gráficas y comunicación visual coherente.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="12" height="12"/><rect x="22" y="6" width="12" height="12"/><rect x="6" y="22" width="12" height="12"/><rect x="22" y="22" width="12" height="12"/></svg>
-        </div>
-        <h3>Gestión de Redes Sociales</h3>
-        <p>Planificación y diseño de contenido digital, adaptado a cada plataforma y audiencia.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="trayectoria">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <span class="section-tag mono">// Trayectoria</span>
-        <h2>Experiencia</h2>
-      </div>
-      <p>Más de 10 años en retail, visual merchandising y diseño gráfico, entre oficina y terreno.</p>
-    </div>
-
-    <div class="about-grid reveal">
-      <div>
-        <p class="about-lede">Profesional del diseño especializado en <strong>Retail, Visual Merchandising y Trade Marketing</strong>, enfocado en optimizar la experiencia de compra y el rendimiento comercial en punto de venta. Experiencia en vitrinas, planogramas, mobiliario, material POP y piezas gráficas corporativas, junto a supervisión de salas a nivel nacional y auditoría de estándares de marca.</p>
-
-        <div class="skills-block">
-          <h4>Herramientas</h4>
-          <div class="skills-tags">
-            <span>Illustrator</span><span>Photoshop</span><span>InDesign</span><span>After Effects</span>
-            <span>Premiere Pro</span><span>Figma</span><span>AutoCAD 2D/3D</span><span>3ds Max</span>
-            <span>SketchUp</span><span>WordPress</span><span>Excel · PowerPoint</span><span>HTML</span>
-            <span>Canva</span><span>CapCut</span><span>Claude</span><span>ChatGPT</span><span>Gemini</span>
-          </div>
-          <h4>Educación</h4>
-          <div class="skills-tags">
-            <span>Diseño Gráfico — AIEP</span>
-            <span>Diplomado en Branding — U. Mayor</span>
-            <span>Diseñador con mención Ambientes — IPP</span>
-          </div>
-        </div>
-      </div>
-
-      <ul class="timeline">
-        <li>
-          <span class="years mono">2025 — 2026</span>
-          <h4>Asistente de Trade Marketing — Castaño</h4>
-          <p>Diseño de exhibidores y material POP, coordinación de montajes e implementación de exhibiciones en más de 77 puntos de venta a nivel nacional.</p>
-        </li>
-        <li>
-          <span class="years mono">2024 — 2025</span>
-          <h4>Diseñador Gráfico — Sistek</h4>
-          <p>Piezas gráficas y digitales para campañas corporativas, diseño de stands para ferias y apoyo en identidad visual de marca.</p>
-        </li>
-        <li>
-          <span class="years mono">2022 — 2024</span>
-          <h4>Auditor de Canal Moderno — RetailLatam (Coca-Cola)</h4>
-          <p>Auditoría en terreno y medición de share of shelf con herramientas de inteligencia artificial en el canal moderno.</p>
-        </li>
-        <li>
-          <span class="years mono">2017</span>
-          <h4>Visual Merchandising — Gotta</h4>
-          <p>Diseño de vitrinas y planogramas para la red nacional, gestión de 23 puntos de venta y capacitación de equipos.</p>
-        </li>
-        <li>
-          <span class="years mono">2014 — 2016</span>
-          <h4>Visual Merchandising &amp; Supervisor — Under Armour</h4>
-          <p>Implementación de vitrinas y campañas, supervisión de equipos en terreno en más de 110 puntos de venta.</p>
-        </li>
-        <li>
-          <span class="years mono">2012 — 2013</span>
-          <h4>Coordinador de Visual Merchandising — Phoenix Spa</h4>
-          <p>Gestión de las marcas Springfield, Cortefiel y EPK: vitrinas, layout comercial y auditorías visuales en tienda.</p>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="section catalogs">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <span class="section-tag mono">// Recursos</span>
-        <h2>Catálogos y presentaciones</h2>
-      </div>
-      <p>Brandbook y dossiers corporativos disponibles para revisión interactiva.</p>
-    </div>
-
-    <div class="viewer reveal">
-      <iframe src="https://online.fliphtml5.com/xslij/xtsp/" style="width:100%; height:100%; border:0; position:relative; z-index:2;" allowfullscreen scrolling="no" loading="lazy" title="Brandbook Sistek 2026"></iframe>
-    </div>
-  </div>
-</section>
-
-<footer class="footer" id="contacto">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <h2>Conversemos sobre tu próximo proyecto.</h2>
-        <form id="contactForm" novalidate>
-          <div class="field">
-            <label for="name">Nombre</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="field">
-            <label for="message">Mensaje</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; border:1px solid #fff;">Enviar mensaje</button>
-          <p class="form-msg" id="formMsg"></p>
-        </form>
-      </div>
-
-      <div>
-        <ul class="contact-list mono">
-          <li><span class="label">Email</span><a href="mailto:somosmcestudio@gmail.com">somosmcestudio@gmail.com</a></li>
-          <li><span class="label">WhatsApp</span><a href="https://wa.me/56974221680" target="_blank" rel="noopener">+56 9 74221680</a></li>
-          <li><span class="label">Ubicación</span><span>Santiago, Chile</span></li>
-        </ul>
-        <div class="social-row">
-          <a href="https://www.behance.net/" target="_blank" rel="noopener" aria-label="Behance">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M2 7h7M2 12h6M2 17h7M9 7v10h4a3 3 0 0 0 0-6 2.5 2.5 0 0 0 0-4H9z"/><path d="M15 13c0-2 1.4-3.5 3.5-3.5S22 11 22 13v.5h-6.8c0 1.6 1.2 2.7 2.8 2.7 1 0 1.8-.4 2.3-1.1"/></svg>
-          </a>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© <span id="year"></span> MC Studio. Todos los derechos reservados.</span>
-      <span class="mono">Diseño &amp; Dirección — Matías Cortés</span>
-    </div>
-  </div>
-</footer>
 
 <script>
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('is-scrolled', window.scrollY > 12);
-}, { passive: true });
+// SLIDER JS
+const slider = document.getElementById('heroSlider');
+const slides = slider.querySelectorAll('.slide');
+const dotsContainer = document.getElementById('heroDots');
+let currentSlide = 0;
+let slideInterval;
 
+slides.forEach((_, index) => {
+  const dot = document.createElement('button');
+  dot.classList.add('dot-btn');
+  if (index === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => goToSlide(index));
+  dotsContainer.appendChild(dot);
+});
+
+const dots = dotsContainer.querySelectorAll('.dot-btn');
+
+function goToSlide(index) {
+  currentSlide = index;
+  slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+  dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+  resetTimer();
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  goToSlide(currentSlide);
+}
+
+function resetTimer() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, 4000);
+}
+
+resetTimer();
+
+// Menú Móvil
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 navToggle.addEventListener('click', () => {
-  const open = navLinks.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', open);
+  const isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', isOpen);
 });
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  navLinks.classList.remove('open');
-  navToggle.setAttribute('aria-expanded', 'false');
-}));
-
-(function buildRuler(){
-  const track = document.querySelector('.ruler-track');
-  const count = Math.ceil(window.innerWidth / 40) + 2;
-  for (let i = 0; i < count; i++){
-    const tick = document.createElement('div');
-    tick.className = 'ruler-label mono';
-    tick.style.width = '40px';
-    tick.textContent = i % 5 === 0 ? String(i * 40).padStart(3,'0') : '';
-    track.appendChild(tick);
-  }
-})();
-
-const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting){
-      entry.target.classList.add('is-visible');
-      io.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-revealEls.forEach(el => io.observe(el));
-
-const filterBtns = document.querySelectorAll('.filter-btn');
-const cards = document.querySelectorAll('#portfolioGrid .card');
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    cards.forEach(card => {
-      const match = filter === 'todos' || card.dataset.category === filter;
-      card.classList.toggle('is-hidden', !match);
-    });
-  });
-});
-
-cards.forEach(card => {
-  const media = card.querySelector('.card-media');
-  const crosshair = card.querySelector('.crosshair');
-  const coord = card.querySelector('.coord');
-  media.addEventListener('mousemove', (e) => {
-    const rect = media.getBoundingClientRect();
-    const x = Math.round(e.clientX - rect.left);
-    const y = Math.round(e.clientY - rect.top);
-    crosshair.style.left = x + 'px';
-    crosshair.style.top = y + 'px';
-    coord.textContent = 'X:' + x + '  Y:' + y;
-  });
-});
-
-const lightbox = document.getElementById('lightbox');
-const lbMedia = document.getElementById('lightboxMedia');
-const lbThumbs = document.getElementById('lightboxThumbs');
-const lbTag = document.getElementById('lightboxTag');
-const lbTitle = document.getElementById('lightboxTitle');
-const lbDesc = document.getElementById('lightboxDesc');
-const lbClient = document.getElementById('lightboxClient');
-const lbClose = document.getElementById('lightboxClose');
-
-function setLightboxImage(src, alt){
-  lbMedia.innerHTML = '';
-  const img = document.createElement('img');
-  img.className = 'card-photo';
-  img.src = src;
-  img.alt = alt;
-  lbMedia.appendChild(img);
-}
-
-function openLightbox(card){
-  const imagesAttr = card.dataset.images;
-  const title = card.dataset.title;
-
-  if (imagesAttr){
-    const images = imagesAttr.split(',').map(s => s.trim()).filter(Boolean);
-    setLightboxImage(images[0], title);
-
-    lbThumbs.innerHTML = '';
-    images.forEach((src, i) => {
-      const thumb = document.createElement('button');
-      thumb.type = 'button';
-      thumb.className = i === 0 ? 'active' : '';
-      thumb.setAttribute('aria-label', 'Ver foto ' + (i + 1));
-      const thumbImg = document.createElement('img');
-      thumbImg.src = src;
-      thumbImg.alt = '';
-      thumb.appendChild(thumbImg);
-      thumb.addEventListener('click', () => {
-        setLightboxImage(src, title);
-        lbThumbs.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-        thumb.classList.add('active');
-      });
-      lbThumbs.appendChild(thumb);
-    });
-  } else {
-    lbThumbs.innerHTML = '';
-    const mediaEl = card.querySelector('.card-media .ph-art, .card-media .card-photo');
-    lbMedia.innerHTML = mediaEl ? mediaEl.outerHTML : '';
-  }
-
-  lbTag.textContent = card.querySelector('.card-tag').textContent;
-  lbTitle.textContent = title;
-  lbDesc.textContent = card.dataset.desc;
-  lbClient.textContent = card.dataset.client;
-  lightbox.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox(){
-  lightbox.classList.remove('open');
-  document.body.style.overflow = '';
-}
-cards.forEach(card => card.addEventListener('click', () => openLightbox(card)));
-lbClose.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
-
-const form = document.getElementById('contactForm');
-const formMsg = document.getElementById('formMsg');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (!form.checkValidity()){
-    formMsg.textContent = 'Por favor completa todos los campos correctamente.';
-    return;
-  }
-  formMsg.textContent = 'Gracias — tu mensaje quedó listo para enviarse. Conecta este formulario a tu servicio de email preferido.';
-  form.reset();
-});
-
-document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 </body>
