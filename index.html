@@ -59,7 +59,7 @@ button{ font-family:inherit; cursor:pointer; }
 .wrap{ max-width: var(--maxw); margin:0 auto; padding-inline: var(--gutter); }
 .mono{ font-family: var(--f-mono); letter-spacing:.04em; }
 
-/* Marks */
+/* Crop Marks & Ruler */
 .crop{
   position: fixed; width: 22px; height: 22px; z-index: 300; pointer-events:none;
   border-color: var(--ink); opacity:.35;
@@ -73,7 +73,6 @@ button{ font-family:inherit; cursor:pointer; }
 .crop-br{ bottom:14px; right:14px; }
 @media (max-width: 640px){ .crop{ display:none; } }
 
-/* Ruler */
 .ruler{
   position: relative; height: 26px; overflow:hidden;
   background: var(--paper); border-bottom: 1px solid var(--line);
@@ -125,9 +124,7 @@ button{ font-family:inherit; cursor:pointer; }
   .nav-links a{ font-size: 1.1rem; }
 }
 
-/* ============================================================
-   NUEVO HERO SPLIT & SLIDER
-   ============================================================ */
+/* HERO SPLIT & SLIDER */
 .hero {
   position: relative;
   padding: clamp(40px, 6vw, 80px) 0;
@@ -137,24 +134,18 @@ button{ font-family:inherit; cursor:pointer; }
   background-size: 44px 44px;
   border-bottom: 1px solid var(--line);
 }
-
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(30px, 5vw, 60px);
   align-items: center;
 }
-
-.hero-info {
-  text-align: left;
-}
-
+.hero-info { text-align: left; }
 .eyebrow{
   display:inline-flex; align-items:center; gap:8px; font-size:.72rem; font-weight:700;
   color: var(--accent); text-transform:uppercase; margin-bottom: 22px;
 }
 .eyebrow::before{ content:""; width:26px; height:1px; background: var(--accent); }
-
 .hero h1 {
   font-size: clamp(2rem, 4vw, 3.4rem);
   font-weight: 800;
@@ -162,31 +153,24 @@ button{ font-family:inherit; cursor:pointer; }
   letter-spacing: -.02em;
   margin: 0 0 20px;
 }
-
-.hero h1 em {
-  font-style: normal;
-  color: var(--accent);
-}
-
+.hero h1 em { font-style: normal; color: var(--accent); }
 .hero p {
   font-size: clamp(0.95rem, 1.2vw, 1.1rem);
   color: var(--graphite);
   margin: 0 0 32px;
   max-width: 500px;
 }
-
 .cta-row{ display:flex; gap:16px; flex-wrap:wrap; }
 .btn{
   padding: 15px 30px; font-size:.82rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
   transition: transform var(--dur) var(--ease), background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
-  display:inline-flex; align-items:center; gap:10px;
+  display:inline-flex; align-items:center; gap:10px; border:none;
 }
 .btn-primary{ background: var(--ink); color:#fff; border:1px solid var(--ink); }
 .btn-primary:hover{ background: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
 .btn-outline{ background:transparent; color: var(--ink); border:1px solid var(--ink); }
 .btn-outline:hover{ background: var(--ink); color:#fff; transform: translateY(-2px); }
 
-/* Slider / Carousel */
 .hero-slider-container {
   position: relative;
   width: 100%;
@@ -196,91 +180,38 @@ button{ font-family:inherit; cursor:pointer; }
   background: var(--anthracite);
   box-shadow: 12px 12px 0px var(--line-dark);
 }
-
 .hero-slider {
   display: flex;
   width: 100%;
   height: 100%;
   transition: transform 0.6s var(--ease);
 }
-
-.slide {
-  min-width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+.slide { min-width: 100%; height: 100%; position: relative; }
+.slide img { width: 100%; height: 100%; object-fit: cover; }
 .slide-caption {
-  position: absolute;
-  bottom: 0;
-  inset-inline: 0;
-  padding: 20px;
+  position: absolute; bottom: 0; inset-inline: 0; padding: 20px;
   background: linear-gradient(0deg, rgba(10,10,10,0.92) 0%, transparent 100%);
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  color: #fff; display: flex; justify-content: space-between; align-items: flex-end;
 }
-
-.slide-caption h4 {
-  margin: 0 0 2px;
-  font-size: 1.05rem;
-}
-
+.slide-caption h4 { margin: 0 0 2px; font-size: 1.05rem; }
 .slide-caption span {
-  font-family: var(--f-mono);
-  font-size: 0.68rem;
-  color: var(--accent);
-  background: rgba(0,0,0,0.5);
-  padding: 2px 8px;
-  border: 1px solid var(--line-dark);
+  font-family: var(--f-mono); font-size: 0.68rem; color: var(--accent);
+  background: rgba(0,0,0,0.5); padding: 2px 8px; border: 1px solid var(--line-dark);
 }
-
 .slider-dots {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  display: flex;
-  gap: 6px;
-  z-index: 10;
+  position: absolute; top: 14px; right: 14px; display: flex; gap: 6px; z-index: 10;
 }
-
 .dot-btn {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.4);
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  transition: all 0.3s;
+  width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4);
+  border: none; padding: 0; cursor: pointer; transition: all 0.3s;
 }
-
-.dot-btn.active {
-  background: var(--accent);
-  transform: scale(1.3);
-}
+.dot-btn.active { background: var(--accent); transform: scale(1.3); }
 
 @media (max-width: 860px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .hero-info {
-    text-align: center;
-  }
-  .hero p {
-    margin-inline: auto;
-  }
-  .cta-row {
-    justify-content: center;
-  }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-info { text-align: center; }
+  .hero p { margin-inline: auto; }
+  .cta-row { justify-content: center; }
 }
 
 /* MARQUEE */
@@ -295,6 +226,85 @@ button{ font-family:inherit; cursor:pointer; }
 }
 .marquee-track span i{ color: var(--accent); font-style:normal; }
 @keyframes scroll{ from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
+
+/* SECCIONES GENERALES */
+.section-pad{ padding: clamp(60px, 8vw, 100px) 0; border-bottom: 1px solid var(--line); }
+.sec-head{ margin-bottom: clamp(30px, 5vw, 60px); }
+.sec-head h2{ font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; margin: 0 0 10px; }
+.sec-head p{ color: var(--graphite); max-width: 600px; margin: 0; }
+
+/* SERVICIOS */
+.services-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.service-card{
+  border: 1px solid var(--line); padding: 32px; background: #fff;
+  transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.service-card:hover{ border-color: var(--ink); transform: translateY(-4px); }
+.service-card .num{ font-family: var(--f-mono); font-weight:700; color: var(--accent); font-size: 1.2rem; margin-bottom: 16px; }
+.service-card h3{ font-size: 1.25rem; font-weight:700; margin: 0 0 12px; }
+.service-card p{ font-size: .9rem; color: var(--graphite); margin:0; }
+
+/* PORTAFOLIO */
+.portfolio-grid{ display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px; }
+.card{
+  border: 1px solid var(--line); background: #fff; cursor: pointer; overflow: hidden;
+  transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.card:hover{ border-color: var(--ink); transform: translateY(-4px); }
+.card-media{ aspect-ratio: 4/3; overflow: hidden; position: relative; background: var(--anthracite); }
+.card-media img{ width:100%; height:100%; object-fit: cover; transition: transform var(--dur) var(--ease); }
+.card:hover .card-media img{ transform: scale(1.05); }
+.card-body{ padding: 20px; }
+.card-tag{ font-family: var(--f-mono); font-size: .7rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
+.card-title{ font-size: 1.1rem; font-weight: 700; margin: 0 0 6px; }
+.card-client{ font-size: .85rem; color: var(--graphite); margin: 0; }
+
+/* TRAYECTORIA */
+.timeline{ border-left: 2px solid var(--line); padding-left: 24px; margin-left: 10px; display:flex; flex-direction:column; gap: 32px; }
+.time-item{ position: relative; }
+.time-item::before{
+  content:""; position:absolute; left: -31px; top: 4px; width: 12px; height: 12px;
+  background: var(--paper); border: 2px solid var(--accent); border-radius: 50%;
+}
+.time-year{ font-family: var(--f-mono); font-weight: 700; color: var(--accent); font-size: .85rem; }
+.time-title{ font-size: 1.1rem; font-weight: 700; margin: 4px 0; }
+.time-desc{ font-size: .9rem; color: var(--graphite); margin:0; }
+
+/* CONTACTO */
+.contact-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+@media (max-width: 768px){ .contact-grid{ grid-template-columns: 1fr; } }
+.contact-form{ display: flex; flex-direction: column; gap: 16px; }
+.form-group{ display: flex; flex-direction: column; gap: 6px; }
+.form-group label{ font-size: .8rem; font-weight: 700; text-transform: uppercase; }
+.form-group input, .form-group textarea{
+  padding: 12px 16px; border: 1px solid var(--line); font-family: inherit; font-size: .9rem;
+  background: #fff; transition: border-color var(--dur);
+}
+.form-group input:focus, .form-group textarea:focus{ border-color: var(--ink); outline:none; }
+
+/* LIGHTBOX */
+.lightbox{
+  position: fixed; inset: 0; z-index: 1000; background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity var(--dur) var(--ease); padding: 20px;
+}
+.lightbox.open{ opacity: 1; pointer-events: auto; }
+.lb-content{
+  background: var(--paper); border: 1px solid var(--ink); max-width: 900px; width: 100%;
+  max-height: 90vh; overflow-y: auto; display: grid; grid-template-columns: 1.2fr 1fr;
+  position: relative; box-shadow: 16px 16px 0px var(--ink);
+}
+@media (max-width: 768px){ .lb-content{ grid-template-columns: 1fr; } }
+.lb-media{ background: var(--anthracite); min-height: 300px; display: flex; align-items: center; justify-content: center; }
+.lb-media img{ max-height: 100%; width: 100%; object-fit: contain; }
+.lb-details{ padding: 32px; display: flex; flex-direction: column; justify-content: space-between; }
+.lb-close{ position: absolute; top: 12px; right: 16px; background: none; border: none; font-size: 1.8rem; cursor: pointer; }
+.lb-thumbs{ display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+.lb-thumbs button{ border: 1px solid var(--line); background: none; padding: 0; width: 48px; height: 48px; cursor: pointer; }
+.lb-thumbs button.active{ border-color: var(--accent); }
+.lb-thumbs img{ width: 100%; height: 100%; object-fit: cover; }
+
+footer{ padding: 40px 0; border-top: 1px solid var(--line); font-size: .8rem; color: var(--graphite); }
 </style>
 </head>
 <body>
@@ -322,7 +332,7 @@ button{ font-family:inherit; cursor:pointer; }
   </div>
 </header>
 
-<!-- SECCIÓN ENTRADA (HERO SPLIT + CARROUSEL) -->
+<!-- HERO ENTRADA CON MOVIMIENTO Y CARROUSEL -->
 <section class="hero" id="inicio">
   <div class="wrap hero-grid">
     
@@ -397,8 +407,200 @@ button{ font-family:inherit; cursor:pointer; }
   </div>
 </div>
 
+<!-- SERVICIOS -->
+<section class="section-pad" id="servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow mono">Soluciones</span>
+      <h2>Áreas de Especialización</h2>
+      <p>Diseño enfocado en potenciar la experiencia comercial del cliente y optimizar la visibilidad de tu negocio.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="num">01.</div>
+        <h3>Visual Merchandising</h3>
+        <p>Planimetrías, diseño de vitrinas, montaje de espacios comerciales, material POP y supervisión de imágen en tienda.</p>
+      </div>
+      <div class="service-card">
+        <div class="num">02.</div>
+        <h3>Branding e Identidad</h3>
+        <p>Creación y rediseño de marcas, manuales de norma gráfica, papelería corporativa y lenguaje visual de marca.</p>
+      </div>
+      <div class="service-card">
+        <div class="num">03.</div>
+        <h3>Marketing Digital</h3>
+        <p>Diseño de piezas para redes sociales, carruseles, campañas publicitarias, banners web y estrategia de contenido visual.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTAFOLIO COMPLETO -->
+<section class="section-pad" id="portafolio">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow mono">Proyectos</span>
+      <h2>Portafolio Destacado</h2>
+      <p>Selección de trabajos realizados para marcas nacionales e internacionales.</p>
+    </div>
+
+    <div class="portfolio-grid">
+      
+      <div class="card" data-gallery='["assets/leidiro-01.jpg", "assets/leidiro-02.jpg"]' data-desc="Diseño y desarrollo de vitrinas para marcas de alta moda, coordinando la implantación visual y material publicitario." data-client="Leidiro / Lineatre">
+        <div class="card-media"><img src="assets/leidiro-01.jpg" alt="Leidiro"></div>
+        <div class="card-body">
+          <div class="card-tag">Retail &amp; VM</div>
+          <h3 class="card-title">Leidiro &amp; Lineatre</h3>
+          <p class="card-client">Vitrinas &amp; Visual Merchandising</p>
+        </div>
+      </div>
+
+      <div class="card" data-gallery='["assets/ua-01.jpg", "assets/ua-02.jpg"]' data-desc="Implementación de material POP y supervisión de guías visuales en tiendas retail." data-client="Under Armour Chile">
+        <div class="card-media"><img src="assets/ua-01.jpg" alt="Under Armour"></div>
+        <div class="card-body">
+          <div class="card-tag">Retail &amp; VM</div>
+          <h3 class="card-title">Under Armour</h3>
+          <p class="card-client">Material POP &amp; Exhibición</p>
+        </div>
+      </div>
+
+      <div class="card" data-gallery='["assets/sistek-post-01-cover.jpg"]' data-desc="Desarrollo de piezas publicitarias digitales, banners web y gráficas promocionales corporativas." data-client="Sistek &amp; Ubiquiti">
+        <div class="card-media"><img src="assets/sistek-post-01-cover.jpg" alt="Sistek"></div>
+        <div class="card-body">
+          <div class="card-tag">Diseño Gráfico</div>
+          <h3 class="card-title">Sistek &amp; Ubiquiti</h3>
+          <p class="card-client">Diseño Digital &amp; Web</p>
+        </div>
+      </div>
+
+      <div class="card" data-gallery='["assets/fuenzalida-01.jpg"]' data-desc="Rediseño de línea gráfica, piezas impresas y presencia en medios digitales para el sector inmobiliario." data-client="Fuenzalida Inmobiliaria">
+        <div class="card-media"><img src="assets/fuenzalida-01.jpg" alt="Fuenzalida"></div>
+        <div class="card-body">
+          <div class="card-tag">Branding</div>
+          <h3 class="card-title">Fuenzalida Inmobiliaria</h3>
+          <p class="card-client">Identidad &amp; Gráfica</p>
+        </div>
+      </div>
+
+      <div class="card" data-gallery='["assets/gotta-01.jpg"]' data-desc="Gestión de gráfica en tiendas, coordinación de cartelería y señalética comercial." data-client="Gotta Shoes">
+        <div class="card-media"><img src="assets/gotta-01.jpg" alt="Gotta"></div>
+        <div class="card-body">
+          <div class="card-tag">Retail &amp; VM</div>
+          <h3 class="card-title">Gotta</h3>
+          <p class="card-client">Gráfica Comercial &amp; Puntos de Venta</p>
+        </div>
+      </div>
+
+      <div class="card" data-gallery='["assets/everlast-01.jpg"]' data-desc="Montaje de corner y gráfica promocional para marcas deportivas y urbanas." data-client="Everlast &amp; Zoo York">
+        <div class="card-media"><img src="assets/everlast-01.jpg" alt="Everlast Zoo York"></div>
+        <div class="card-body">
+          <div class="card-tag">Retail &amp; VM</div>
+          <h3 class="card-title">Everlast &amp; Zoo York</h3>
+          <p class="card-client">Visual Merchandising</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRAYECTORIA -->
+<section class="section-pad" id="trayectoria">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow mono">Experiencia</span>
+      <h2>Trayectoria Profesional</h2>
+    </div>
+    <div class="timeline">
+      <div class="time-item">
+        <div class="time-year">2024 — PRESENTE</div>
+        <div class="time-title">Fundador &amp; Director Creativo — MC Studio</div>
+        <div class="time-desc">Desarrollo de soluciones visuales integrales, Branding y Visual Merchandising para empresas y PYMES.</div>
+      </div>
+      <div class="time-item">
+        <div class="time-year">2022 — 2024</div>
+        <div class="time-title">Especialista Visual Merchandiser — Retail</div>
+        <div class="time-desc">Supervisión y montaje de tiendas, vitrinas y planimetrías comerciales en Santiago de Chile.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section-pad" id="contacto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow mono">Contacto</span>
+      <h2>Hablemos de tu Proyecto</h2>
+      <p>Envíanos tus dudas o requerimientos para coordinar una propuesta técnica a la medida.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" required placeholder="Tu nombre o empresa">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required placeholder="correo@ejemplo.cl">
+        </div>
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea id="message" rows="5" required placeholder="Detalles de tu requerimiento..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+        <p id="formMsg" style="font-size: 0.85rem; margin-top: 8px;"></p>
+      </form>
+      <div>
+        <p style="font-weight: 700; margin-top: 0;">MC Studio</p>
+        <p style="color: var(--graphite);">Matías Cortés — Diseñador Gráfico &amp; Especialista en Visual Merchandising</p>
+        <p style="color: var(--graphite);">Santiago, Chile</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-content">
+    <button class="lb-close" id="lbClose">&times;</button>
+    <div class="lb-media" id="lbMedia"></div>
+    <div class="lb-details">
+      <div>
+        <div class="card-tag" id="lbTag">RETAIL</div>
+        <h3 id="lbTitle" style="font-size: 1.5rem; margin: 8px 0;"></h3>
+        <p id="lbClient" style="font-size: 0.9rem; color: var(--accent); font-weight: 700; margin-bottom: 16px;"></p>
+        <p id="lbDesc" style="font-size: 0.9rem; color: var(--graphite); line-height: 1.6;"></p>
+      </div>
+      <div class="lb-thumbs" id="lbThumbs"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <span>&copy; <span id="year"></span> MC Studio. Todos los derechos reservados.</span>
+    <span class="mono">mcstudio.cl</span>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT COMPLETO Y CORREGIDO -->
 <script>
-// SLIDER JS
+// MENÚ NAVEGACIÓN
+const navbar = document.getElementById('navbar');
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('is-scrolled', window.scrollY > 20);
+});
+
+navToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', isOpen);
+});
+
+// HERO CARROUSEL / SLIDER
 const slider = document.getElementById('heroSlider');
 const slides = slider.querySelectorAll('.slide');
 const dotsContainer = document.getElementById('heroDots');
@@ -434,13 +636,82 @@ function resetTimer() {
 
 resetTimer();
 
-// Menú Móvil
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
-navToggle.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', isOpen);
+// LIGHTBOX PORTAFOLIO
+const lightbox = document.getElementById('lightbox');
+const lbClose = document.getElementById('lbClose');
+const lbMedia = document.getElementById('lbMedia');
+const lbTag = document.getElementById('lbTag');
+const lbTitle = document.getElementById('lbTitle');
+const lbDesc = document.getElementById('lbDesc');
+const lbClient = document.getElementById('lbClient');
+const lbThumbs = document.getElementById('lbThumbs');
+const cards = document.querySelectorAll('.card');
+
+function setLightboxImage(src, alt) {
+  lbMedia.innerHTML = `<img src="${src}" alt="${alt}">`;
+}
+
+function openLightbox(card) {
+  const title = card.querySelector('.card-title').textContent;
+  const galleryData = card.dataset.gallery;
+  let gallery = [];
+  try { gallery = JSON.parse(galleryData || '[]'); } catch (e) { gallery = []; }
+
+  if (gallery.length > 0) {
+    setLightboxImage(gallery[0], title);
+    lbThumbs.innerHTML = '';
+    gallery.forEach((src, idx) => {
+      const thumb = document.createElement('button');
+      if (idx === 0) thumb.classList.add('active');
+      const thumbImg = document.createElement('img');
+      thumbImg.src = src;
+      thumbImg.alt = title;
+      thumb.appendChild(thumbImg);
+      thumb.addEventListener('click', () => {
+        setLightboxImage(src, title);
+        lbThumbs.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+      lbThumbs.appendChild(thumb);
+    });
+  } else {
+    lbThumbs.innerHTML = '';
+    const mediaEl = card.querySelector('.card-media img');
+    lbMedia.innerHTML = mediaEl ? mediaEl.outerHTML : '';
+  }
+
+  lbTag.textContent = card.querySelector('.card-tag').textContent;
+  lbTitle.textContent = title;
+  lbDesc.textContent = card.dataset.desc;
+  lbClient.textContent = card.dataset.client;
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+cards.forEach(card => card.addEventListener('click', () => openLightbox(card)));
+lbClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+// FORMULARIO DE CONTACTO
+const form = document.getElementById('contactForm');
+const formMsg = document.getElementById('formMsg');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!form.checkValidity()){
+    formMsg.textContent = 'Por favor completa todos los campos correctamente.';
+    return;
+  }
+  formMsg.textContent = 'Gracias — tu mensaje quedó listo para enviarse. Conecta este formulario a tu servicio de email preferido.';
+  form.reset();
 });
+
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 </body>
