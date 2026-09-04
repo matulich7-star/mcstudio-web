@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -289,8 +290,8 @@ button{ font-family:inherit; cursor:pointer; }
 }
 .lightbox.open .lightbox-box{ transform: translateY(0); }
 @media (max-width: 760px){ .lightbox-box{ grid-template-columns: 1fr; } }
-.lightbox-media{ aspect-ratio: 4/3; position:relative; overflow:hidden; }
-.lightbox-media img.card-photo{ width:100%; height:100%; object-fit:cover; }
+.lightbox-media{ aspect-ratio: 4/3; position:relative; overflow:hidden; background: var(--anthracite); display:flex; align-items:center; justify-content:center; }
+.lightbox-media img.card-photo{ width:100%; height:100%; object-fit:contain; }
 .lightbox-thumbs{
   display:flex; gap:8px; padding: 14px 34px 0; flex-wrap:wrap;
 }
@@ -497,11 +498,22 @@ button{ font-family:inherit; cursor:pointer; }
         </div>
       </article>
 
-      <article class="card reveal" data-category="grafico" data-title="Sistek — Identidad corporativa" data-desc="Manual de identidad, auditoría de marca y guía de identidad verbal." data-client="Cliente: Sistek · Rubro: Tecnología">
+      <article class="card reveal" data-category="grafico" data-title="Sistek — Diseño de banners web y posts para redes sociales" data-desc="Diseño de banners promocionales para el sitio web y posts para Instagram, en alianza con Ubiquiti: lanzamientos de productos UniFi (switching, WiFi 7, Cloud Gateway), con foco en piezas de producto y beneficios técnicos." data-client="Cliente: Sistek · Rubro: Tecnología" data-images="assets/sistek-post-01.jpg,assets/sistek-post-02.jpg,assets/sistek-banner-01.jpg,assets/sistek-banner-02.jpg,assets/sistek-banner-03.jpg,assets/sistek-banner-04.jpg">
         <div class="card-media">
-          <div class="ph-art ph-3"><span class="ph-mono mono">PROY. 03</span></div>
+          <img class="card-photo" src="assets/sistek-post-01-cover.jpg" alt="Sistek — banner UniFi WiFi 7" loading="lazy">
+          <span class="ph-mono mono">PROY. 03</span>
           <span class="card-tag mono">Diseño Gráfico</span>
-          <div class="card-overlay"><h3>Sistek</h3><p>Manual de identidad corporativa</p></div>
+          <div class="card-overlay"><h3>Sistek</h3><p>Banners web y posts para redes</p></div>
+          <div class="crosshair"><span class="mono coord">X:—  Y:—</span></div>
+        </div>
+      </article>
+
+      <article class="card reveal" data-category="grafico" data-title="Fuenzalida Gestión Inmobiliaria — Identidad y comunicación digital" data-desc="Diseño de logotipo, tarjetas de presentación y piezas gráficas para redes sociales de una inmobiliaria en República Dominicana. Incluye desarrollo de marca (versión positiva y negativa del isotipo), papelería corporativa y posts promocionales." data-client="Cliente: Fuenzalida Gestión Inmobiliaria · Rubro: Inmobiliario" data-images="assets/fuenzalida-01.jpg,assets/fuenzalida-05.jpg,assets/fuenzalida-02.jpg,assets/fuenzalida-03.jpg,assets/fuenzalida-04.jpg">
+        <div class="card-media">
+          <img class="card-photo" src="assets/fuenzalida-01.jpg" alt="Fuenzalida Gestión Inmobiliaria — post redes sociales" loading="lazy">
+          <span class="ph-mono mono">PROY. 09</span>
+          <span class="card-tag mono">Diseño Gráfico</span>
+          <div class="card-overlay"><h3>Fuenzalida Inmobiliaria</h3><p>Logotipo, tarjetas y redes sociales</p></div>
           <div class="crosshair"><span class="mono coord">X:—  Y:—</span></div>
         </div>
       </article>
@@ -535,7 +547,7 @@ button{ font-family:inherit; cursor:pointer; }
         </div>
       </article>
 
-      <article class="card reveal" data-category="rrss" data-title="GEO Marketing — Contenido RRSS" data-desc="Estrategia de contenidos, carruseles e infografías para Instagram." data-client="Cliente: GEO Marketing · Rubro: Agencia">
+      <article class="card reveal" data-category="rrss" data-title="GEO Marketing — Contenido RRSS" data-desc="Diseño de piezas gráficas para redes sociales: carruseles educativos, historias de Instagram, tabla de planes y precios, y contenido de marca con enfoque en geomarketing y estrategia digital para Pymes." data-client="Cliente: GEO Marketing · Rubro: Agencia">
         <div class="card-media">
           <div class="ph-art ph-6"><span class="ph-mono mono">PROY. 06</span></div>
           <span class="card-tag mono">Redes Sociales</span>
