@@ -249,7 +249,7 @@ footer{font-family:var(--m);font-size:.7rem;text-transform:uppercase;letter-spac
 
 <section id="catalogos">
   <div class="wrap">
-    <div class="head"><h2>Catálogos y presentaciones</h2><p class="lead">Brandbooks, manuales y dossiers para revisar en línea.</p></div>
+    <div class="head"><h2>Catálogos y presentaciones</h2><p class="lead">Brandbooks, manuales, dossiers y revistas para revisar en línea.</p></div>
     <div id="cats"></div>
   </div>
 </section>
@@ -303,7 +303,8 @@ const P=[
 const C=[
 ['Brandbook Sistek 2026','Brandbook','https://online.fliphtml5.com/xslij/xtsp/'],
 ['Manual de señalética interior y wayfinding','Manual digital','https://online.fliphtml5.com/xslij/yrmg/index.html'],
-['Ludoteca educativa: juegos para la convivencia','Manual digital','https://online.fliphtml5.com/xslij/ttrp/index.html']
+['Ludoteca educativa: juegos para la convivencia','Manual digital','https://online.fliphtml5.com/xslij/ttrp/index.html'],
+['Conectados — Un espacio de tecnología, conocimiento y colaboración','Revista digital','https://publuu.com/flip-book/921377/2019415']
 ];
 const $=id=>document.getElementById(id);
 P.forEach(p=>{p.imgs=(p.f||p.i.map(x=>p.p+x+'.jpg')).map(f=>f.startsWith('assets/')?f:'assets/'+f);p.cv=p.cover?'assets/'+p.cover:p.imgs[0]});
